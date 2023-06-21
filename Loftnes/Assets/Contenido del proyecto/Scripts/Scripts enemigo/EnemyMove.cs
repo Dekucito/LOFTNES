@@ -6,6 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     [Header("Player")]
     private Transform target;
+    public bool followAtThePlayer;
 
     [Header("enemy")]
     private Animator enemyAnimator;
@@ -25,14 +26,12 @@ public class EnemyMove : MonoBehaviour
     }
     public void IAMoveToPlayer()
     {
-        if (Vector2.Distance(transform.position, target.position) > stoppingDisance)
+        if (followAtThePlayer)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, target.position) > stoppingDisance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            }
         }
-        /* if (Vector2.Distance(transform.position, target.position) < stoppingDisance)
-         {
-             transform.position = Vector2.MoveTowards(transform.position, -target.position, speed * Time.deltaTime);
-         }*/
-
     }
 }

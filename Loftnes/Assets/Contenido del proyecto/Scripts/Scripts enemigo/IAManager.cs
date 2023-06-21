@@ -34,6 +34,10 @@ public class IAManager : MonoBehaviour
         {
             enemyInRange = true;
         }
+        if (collision.CompareTag("ObjectsOfMap"))
+        {
+
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
