@@ -9,7 +9,6 @@ public class EnemyMove : MonoBehaviour
     public bool followAtThePlayer;
 
     [Header("enemy")]
-    private Animator enemyAnimator;
 
     [Header("Dates")]
     public float stoppingDisance;
@@ -18,7 +17,6 @@ public class EnemyMove : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        enemyAnimator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -30,7 +28,7 @@ public class EnemyMove : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, target.position) > stoppingDisance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime).normalized;
             }
         }
     }
