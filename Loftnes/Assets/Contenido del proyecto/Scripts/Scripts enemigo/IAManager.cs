@@ -7,14 +7,21 @@ using UnityEngine.AI;
 public class IAManager : MonoBehaviour
 {
     [Header("parametros")]
+    public bool objectivoDectado;
     public bool enemyInRange;
 
     [Header("Follow")]
     public Transform player;
     private NavMeshAgent agent;
+
+    [Header("Animator")]
     private Animator enemyAnimator;
-    public float x;
-    public float y;
+    private float x;
+    private float y;
+
+    [Header("Scripts")]
+    public Patrullar patrulla;
+    public EnemyAttack atack;
 
     private void Awake()
     {
@@ -31,30 +38,52 @@ public class IAManager : MonoBehaviour
     private void Update()
     {
         FollowPlayer();
-        Animaciones();
+
+       // Animaciones();
     }
     private void FollowPlayer()
     {
-        agent.SetDestination(player.position);
+        float distancia = Vector3.Distance(player.position, this.transform.position);
+
+        if (distancia < 3)
+        {
+            objectivoDectado = true;
+        }
+
+        MovimientoEnemy(objectivoDectado);
+    }
+    private void MovimientoEnemy(bool esDetectado)
+    {
+        if (esDetectado)
+        {
+            agent.SetDestination(player.position);
+        }
+        else
+        {
+            patrulla.Move();
+        }
     }
     void Animaciones()
     {
-        x = ((float)transform.position.x);
-        y = ((float)transform.position.y);
-
-        x = Mathf.Clamp(x, -1f, 1f);
-        y = Mathf.Clamp(y, -1f, 1f);
-
-        enemyAnimator.SetFloat("Horizontal", x);
-        enemyAnimator.SetFloat("Vertical", y);
-        enemyAnimator.SetBool("walk", true);
+     
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-       
+        if (collision.CompareTag("Player"))
+        {
+            enemyInRange = true;
+
+            atack.AttackPlayer(enemyInRange);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-       
+        if (collision.CompareTag("Player"))
+        {
+            enemyInRange = true;
+
+            atack.AttackPlayer(enemyInRange);
+        }
     }
 }

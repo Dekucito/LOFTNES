@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0642: Posible instrucción vacía errónea
+dotnet_diagnostic.CS0642.severity = silent
