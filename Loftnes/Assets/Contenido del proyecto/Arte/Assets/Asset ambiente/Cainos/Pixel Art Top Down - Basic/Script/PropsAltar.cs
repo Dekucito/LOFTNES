@@ -8,7 +8,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
     public class PropsAltar : MonoBehaviour
     {
-        public List<SpriteRenderer> runes;
+        public List<SpriteRenderer> sprites;
         public float lerpSpeed;
 
         private Color curColor;
@@ -16,7 +16,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            targetColor = new Color(1, 1, 1, 1);
+            targetColor = new Color(0, 165, 238, 255);
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -28,7 +28,7 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
 
-            foreach (var r in runes)
+            foreach (var r in sprites)
             {
                 r.color = curColor;
             }
