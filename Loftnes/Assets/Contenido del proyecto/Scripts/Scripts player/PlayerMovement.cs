@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRb;
     private Vector2 moveInput;
     private Animator playerAnimator;
+
+    public bool playerIsWalking;
     public bool CanMove;
 
     void Start()
@@ -22,7 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Parametros();
+        if (playerIsWalking)
+        {
+            Parametros();
+        }
     }
     private void FixedUpdate()
     {
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanMove)
         {
+            playerIsWalking = true;
             playerRb.MovePosition(playerRb.position + moveInput * speed * Time.fixedDeltaTime);
         }
     }
