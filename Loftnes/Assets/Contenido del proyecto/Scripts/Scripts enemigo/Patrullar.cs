@@ -7,7 +7,7 @@ public class Patrullar : MonoBehaviour
 {
     [Header("patrullar")]
     [SerializeField]
-    private float velocidadmovimiento;
+    public float velocidadmovimiento;
     [SerializeField]
     private Transform[] puntosmovimiento;
     [SerializeField]

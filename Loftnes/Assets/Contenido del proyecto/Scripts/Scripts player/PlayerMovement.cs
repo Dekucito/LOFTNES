@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Move")]
     private Rigidbody2D playerRb;
     private Vector2 moveInput;
-    private Animator playerAnimator;
+    public Animator playerAnimator;
 
     public bool playerIsWalking;
     public bool CanMove;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerIsWalking)
         {
-            Parametros();
+            InputsStats();
         }
     }
     private void FixedUpdate()
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             playerRb.MovePosition(playerRb.position + moveInput * speed * Time.fixedDeltaTime);
         }
     }
-    private void Parametros()
+    private void InputsStats()
     {
         float  moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");

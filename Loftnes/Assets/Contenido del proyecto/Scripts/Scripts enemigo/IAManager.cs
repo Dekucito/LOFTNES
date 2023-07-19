@@ -15,9 +15,7 @@ public class IAManager : MonoBehaviour
     private NavMeshAgent agent;
 
     [Header("Animator")]
-    private Animator enemyAnimator;
-    private float x;
-    private float y;
+    private Animator animator;
 
     [Header("Scripts")]
     public Patrullar patrulla;
@@ -30,7 +28,7 @@ public class IAManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        enemyAnimator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -39,7 +37,9 @@ public class IAManager : MonoBehaviour
     {
         FollowPlayer();
 
-       // Animaciones();
+        animator.SetInteger("Direction", 1);
+
+        Animaciones();
     }
     private void FollowPlayer()
     {
@@ -65,9 +65,29 @@ public class IAManager : MonoBehaviour
     }
     void Animaciones()
     {
-     
-    }
+        Vector3 movementDirection = agent.velocity.normalized;
 
+        if (movementDirection != Vector3.zero)
+        {
+            // Calcular los valores absolutos de las componentes X e Y del vector de dirección
+            float horizontal = Mathf.Abs(movementDirection.x);
+            float vertical = Mathf.Abs(movementDirection.y);
+
+            // Determinar la dirección basada en los valores absolutos
+            int direction;
+            if (horizontal > vertical)
+            {
+                direction = (movementDirection.x > 0) ? 1 : 3; // Derecha o izquierda
+            }
+            else
+            {
+                direction = (movementDirection.y > 0) ? 0 : 2; // Arriba o abajo
+            }
+
+            animator.SetInteger("Direction", direction);
+        }
+
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
