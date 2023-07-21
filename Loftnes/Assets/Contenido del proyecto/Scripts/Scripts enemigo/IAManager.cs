@@ -101,9 +101,7 @@ public class IAManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            enemyInRange = true;
-
-            atack.AttackPlayer(enemyInRange);
+            enemyInRange = false;
         }
     }
 }

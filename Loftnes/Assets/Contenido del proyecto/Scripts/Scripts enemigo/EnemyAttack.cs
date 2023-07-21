@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField]
     private bool impactAttack;
 
+    public float damageAttack;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<StatsPlayer>();
@@ -22,10 +25,15 @@ public class EnemyAttack : MonoBehaviour
         attacking = false;
         impactAttack = false;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            impactAttack = true;
+        }
+    }
     public void AttackPlayer(bool playerinRange)
     {
-        Debug.Log("attacking1");
-
         if (playerinRange && !attacking)
         {
             Debug.Log("attacking2");
@@ -34,13 +42,37 @@ public class EnemyAttack : MonoBehaviour
             StartCoroutine(Atack());
             if (impactAttack)
             {
-                player.life = player.life - 1;
+                FinalDamage();
 
                 impactAttack = false;
-                Debug.Log(player.life);
             }
         }
     }
+    private void FinalDamage()
+    {
+        float damageReduction = 0;
+
+        if (player.Maxdefending >= 18 && player.Maxdefending <= 25)
+        {
+            damageReduction = damageReduction * 0.3f;
+        } 
+        if (player.Maxdefending >= 26 && player.Maxdefending <= 50)
+        {
+            damageReduction = damageReduction * 0.5f;
+        } 
+        if (player.Maxdefending >= 51 && player.Maxdefending >= 70)
+        {
+            damageReduction = damageReduction * 0.8f; ;
+        }
+        else
+        {
+            damageReduction = 0;
+        }
+        float damage = damageAttack - damageReduction;
+
+        player.TakeDamage(damage);
+    }
+
     IEnumerator Atack()
     {
         //ejecuta animacion de ataque
@@ -49,12 +81,5 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);//dependiendo de la duracion de la animacion de ataque
         animator.SetBool("attack", false);
         attacking = false;
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            impactAttack = true;
-        }
     }
 }

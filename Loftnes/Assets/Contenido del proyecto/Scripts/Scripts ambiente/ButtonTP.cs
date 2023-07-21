@@ -48,7 +48,6 @@ public class ButtonTP : MonoBehaviour
         if (TpTargetACtive)
         {
             StartCoroutine(TransitionTeleport());
-
         }
     }
     private IEnumerator TransitionTeleport()
