@@ -65,6 +65,8 @@ public class PortalManager : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
+
+        Debug.Log("ESTA EN EL TRIGGER");
         if (other.CompareTag("Player"))
         {
             player.playerAnimator.SetFloat("Speed", 0f);
@@ -105,6 +107,7 @@ public class PortalManager : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log("SALIO DE EL TRIGGER");
         if (other.CompareTag("Player"))
         {
             targetColor = new Color(1, 1, 1, 0);

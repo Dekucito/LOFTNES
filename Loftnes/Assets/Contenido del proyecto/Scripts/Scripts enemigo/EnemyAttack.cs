@@ -25,6 +25,15 @@ public class EnemyAttack : MonoBehaviour
         attacking = false;
         impactAttack = false;
     }
+    private void Update()
+    {
+        if (impactAttack)
+        {
+            FinalDamage();
+
+            impactAttack = false;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -32,21 +41,24 @@ public class EnemyAttack : MonoBehaviour
             impactAttack = true;
         }
     }
-    public void AttackPlayer(bool playerinRange)
+    public void AttackPlayer(bool playerinRange, int animation)
     {
         if (playerinRange && !attacking)
         {
-            Debug.Log("attacking2");
+            Debug.Log("attacking");
 
             attacking = true;
-            StartCoroutine(Atack());
-            if (impactAttack)
-            {
-                FinalDamage();
-
-                impactAttack = false;
-            }
+            StartCoroutine(Atack(animation));
         }
+    }
+    IEnumerator Atack(int animation)
+    {
+        //ejecuta animacion de ataque
+        //animator.SetInteger("attack", animation);
+
+        yield return new WaitForSeconds(1);//dependiendo de la duracion de la animacion de ataque
+       // animator.SetInteger("attack", 5);
+        attacking = false;
     }
     private void FinalDamage()
     {
@@ -71,15 +83,5 @@ public class EnemyAttack : MonoBehaviour
         float damage = damageAttack - damageReduction;
 
         player.TakeDamage(damage);
-    }
-
-    IEnumerator Atack()
-    {
-        //ejecuta animacion de ataque
-        animator.SetBool("attack", true);
-
-        yield return new WaitForSeconds(0.5f);//dependiendo de la duracion de la animacion de ataque
-        animator.SetBool("attack", false);
-        attacking = false;
     }
 }

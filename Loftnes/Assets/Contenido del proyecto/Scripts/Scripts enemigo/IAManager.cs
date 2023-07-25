@@ -16,10 +16,14 @@ public class IAManager : MonoBehaviour
 
     [Header("Animator")]
     private Animator animator;
+    int direction;
 
     [Header("Scripts")]
     public Patrullar patrulla;
     public EnemyAttack atack;
+
+    [Header("attack")]
+    public GameObject arma;
 
     private void Awake()
     {
@@ -74,7 +78,6 @@ public class IAManager : MonoBehaviour
             float vertical = Mathf.Abs(movementDirection.y);
 
             // Determinar la dirección basada en los valores absolutos
-            int direction;
             if (horizontal > vertical)
             {
                 direction = (movementDirection.x > 0) ? 1 : 3; // Derecha o izquierda
@@ -92,9 +95,13 @@ public class IAManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("ests dentro");
+
             enemyInRange = true;
 
-            atack.AttackPlayer(enemyInRange);
+            //animacion de sacar arma
+            arma.SetActive(true);
+            atack.AttackPlayer(enemyInRange, direction);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -102,6 +109,9 @@ public class IAManager : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             enemyInRange = false;
+
+            //animacion de esconder arma
+            arma.SetActive(false);
         }
     }
 }
