@@ -8,7 +8,6 @@ public class IAManager : MonoBehaviour
 {
     [Header("parametros")]
     public bool objectivoDectado;
-    public bool enemyInRange;
 
     [Header("Follow")]
     public Transform player;
@@ -16,14 +15,17 @@ public class IAManager : MonoBehaviour
 
     [Header("Animator")]
     private Animator animator;
-    int direction;
+    public int direction;
 
     [Header("Scripts")]
     public Patrullar patrulla;
-    public EnemyAttack atack;
+    public EnemyAttack attack;
 
     [Header("attack")]
     public GameObject arma;
+    public Transform[] armaPositionForDirection;
+    [Header("bool")]
+    public bool armaActive;
 
     private void Awake()
     {
@@ -44,6 +46,22 @@ public class IAManager : MonoBehaviour
         animator.SetInteger("Direction", 1);
 
         Animaciones();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            armaActive = true;
+            //animacion de sacar arma
+            arma.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+
+        }
     }
     private void FollowPlayer()
     {
@@ -81,37 +99,23 @@ public class IAManager : MonoBehaviour
             if (horizontal > vertical)
             {
                 direction = (movementDirection.x > 0) ? 1 : 3; // Derecha o izquierda
+                ArmaActive(direction);
             }
             else
             {
                 direction = (movementDirection.y > 0) ? 0 : 2; // Arriba o abajo
+                ArmaActive(direction);
             }
 
             animator.SetInteger("Direction", direction);
         }
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void ArmaActive(int armaGameobjectPosition)
     {
-        if (collision.CompareTag("Player"))
+        if (armaActive)
         {
-            Debug.Log("ests dentro");
-
-            enemyInRange = true;
-
-            //animacion de sacar arma
-            arma.SetActive(true);
-            atack.AttackPlayer(enemyInRange, direction);
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            enemyInRange = false;
-
-            //animacion de esconder arma
-            arma.SetActive(false);
+            arma.transform.parent = armaPositionForDirection[armaGameobjectPosition];
         }
     }
 }

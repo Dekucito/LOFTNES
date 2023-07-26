@@ -7,14 +7,20 @@ public class EnemyAttack : MonoBehaviour
 {
     [Header("scripts")]
     StatsPlayer player;
+    public IAManager IA;
 
     [Header("componentes")]
     public Animator animator;
 
-    [SerializeField]
-    private bool attacking;
+    public Transform player_Position; // Asigna el GameObject del jugador en el Inspector
+    public float distanciaMinima = 2f; // Distancia m�nima para iniciar el ataque
+
     [SerializeField]
     private bool impactAttack;
+    public bool canAttack;
+
+    private bool isAttacking;
+    public bool attackStarted; // Variable para verificar si ya se inició un ataque
 
     public float damageAttack;
 
@@ -22,16 +28,35 @@ public class EnemyAttack : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<StatsPlayer>();
 
-        attacking = false;
         impactAttack = false;
     }
     private void Update()
     {
-        if (impactAttack)
+        if (impactAttack && attackStarted)
         {
             FinalDamage();
 
             impactAttack = false;
+        }
+
+        float distanciaAlJugador = Vector2.Distance(IA.transform.position, player_Position.position);
+
+        if (distanciaAlJugador < distanciaMinima)
+        {
+            canAttack = true;
+       
+            if (!isAttacking && !attackStarted) // Verificamos si el enemigo no está atacando actualmente y si el ataque no ha sido iniciado
+            {
+                AttackPlayer(canAttack, IA.direction);
+            }
+        }
+        else
+        {
+            canAttack = false;
+            StopCoroutine(RutineAttack());
+            attackStarted = false; // Restablecemos attackStarted si el jugador está fuera del rango
+
+            animator.SetInteger("attack", 4);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,24 +66,33 @@ public class EnemyAttack : MonoBehaviour
             impactAttack = true;
         }
     }
-    public void AttackPlayer(bool playerinRange, int animation)
+    public void AttackPlayer(bool playerInRange, int animation)
     {
-        if (playerinRange && !attacking)
+        if (playerInRange && !isAttacking)
         {
             Debug.Log("attacking");
+            isAttacking = true; // Establecemos isAttacking a true para evitar que se inicie una nueva corrutina de ataque
 
-            attacking = true;
-            StartCoroutine(Atack(animation));
+            StartCoroutine(RutineAttack());
         }
     }
-    IEnumerator Atack(int animation)
+    public IEnumerator RutineAttack()
     {
-        //ejecuta animacion de ataque
-        //animator.SetInteger("attack", animation);
+        attackStarted = true; // Indicamos que se ha iniciado un ataque
 
-        yield return new WaitForSeconds(1);//dependiendo de la duracion de la animacion de ataque
-       // animator.SetInteger("attack", 5);
-        attacking = false;
+        Debug.Log("entra en la corrutina;");
+        animator.SetInteger("attack", IA.direction);
+
+        Debug.Log("envio parametro a animacion");
+        yield return new WaitForSeconds(0.2f);
+        Debug.Log("espero 0.2f");
+
+        // Esperar la duración de la animación de ataque antes de restablecer isAttacking a false
+        yield return new WaitForSeconds(0.5f); // Reemplaza 'animacionDuracion' con la duración real de la animación de ataque
+
+        // Restablecer isAttacking a false después de completar la animación de ataque
+        isAttacking = false;
+        attackStarted = false; // Restablecemos attackStarted para que un nuevo ataque pueda ser iniciado en el futuro
     }
     private void FinalDamage()
     {
@@ -66,20 +100,17 @@ public class EnemyAttack : MonoBehaviour
 
         if (player.Maxdefending >= 18 && player.Maxdefending <= 25)
         {
-            damageReduction = damageReduction * 0.3f;
+            damageReduction = damageAttack * 0.3f;
         } 
         if (player.Maxdefending >= 26 && player.Maxdefending <= 50)
         {
-            damageReduction = damageReduction * 0.5f;
+            damageReduction = damageAttack * 0.5f;
         } 
         if (player.Maxdefending >= 51 && player.Maxdefending >= 70)
         {
-            damageReduction = damageReduction * 0.8f; ;
+            damageReduction = damageAttack * 0.8f; ;
         }
-        else
-        {
-            damageReduction = 0;
-        }
+        Debug.Log("reuccion del daño es igual a =" + damageReduction);
         float damage = damageAttack - damageReduction;
 
         player.TakeDamage(damage);

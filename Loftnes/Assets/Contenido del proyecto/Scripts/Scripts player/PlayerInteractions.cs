@@ -85,7 +85,7 @@ public class PlayerInteractions : MonoBehaviour
 
         player.Maxdamage += valueStrength;
 
-        yield return new WaitForSeconds(20); // depende de la duracion que le quieran dar a el efecto de fuerza
+        yield return new WaitForSeconds(2); // depende de la duracion que le quieran dar a el efecto de fuerza
 
         player.Maxdamage -= valueStrength;
 
@@ -98,9 +98,9 @@ public class PlayerInteractions : MonoBehaviour
 
         player.Maxdefending += defensValue;
 
-        yield return new WaitForSeconds(20); // depende de la duracion que le quieran dar a el efecto de fuerza
+        yield return new WaitForSeconds(2); // depende de la duracion que le quieran dar a el efecto de fuerza
 
-        player.Maxdamage -= defensValue;
+        player.Maxdefending -= defensValue;
 
         coolingTimeEffects = 0;
     }
