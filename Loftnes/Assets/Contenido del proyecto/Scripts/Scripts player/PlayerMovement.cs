@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
+       [SerializeField] private float speed = 3f;
 
     [Header("Move")]
     private Rigidbody2D playerRb;
@@ -14,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool playerIsWalking;
     public bool CanMove;
+
+    public float moveXValor;
+    public float moveYValor;
 
     void Start()
     {
@@ -43,8 +45,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void InputsStats()
     {
-        float  moveX = Input.GetAxisRaw("Horizontal");
+        float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+
+        moveXValor = moveX;
+        moveYValor = moveY;
 
         moveInput = new Vector2(moveX, moveY).normalized;
 

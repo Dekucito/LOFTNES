@@ -45,7 +45,7 @@ public class IAManager : MonoBehaviour
 
         animator.SetInteger("Direction", 1);
 
-        Animaciones();
+        AnimationsMove();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -85,7 +85,7 @@ public class IAManager : MonoBehaviour
             patrulla.Move();
         }
     }
-    void Animaciones()
+    void AnimationsMove()
     {
         Vector3 movementDirection = agent.velocity.normalized;
 
