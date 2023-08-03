@@ -65,8 +65,6 @@ public class PortalManager : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-
-        Debug.Log("ESTA EN EL TRIGGER");
         if (other.CompareTag("Player"))
         {
             player.playerAnimator.SetFloat("Speed", 0f);
