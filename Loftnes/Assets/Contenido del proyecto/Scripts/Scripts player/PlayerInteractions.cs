@@ -18,10 +18,15 @@ public class PlayerInteractions : MonoBehaviour
 
     [Header("Potion Count")]
     public TMP_Text[] potionText;
+    public TMP_Text textNotHavePotions;
+    public GameObject textPotions;
 
+    public int potionNumber;
     public int posionLifeCount;
     public int posionStrenghtCount;
     public int posionDefenseCounts;
+
+    public bool presbuttonAndNotPosion;
 
     public void Start()
     {
@@ -31,41 +36,92 @@ public class PlayerInteractions : MonoBehaviour
     void Update()
     {
         ButtonsComands();
+
+        TextCountPotion();
     }
 
     private void ButtonsComands()
     {
-        if (Input.GetKey(KeyCode.Alpha1) && coolingTimeLife == 0 && posionLifeCount != 0)
+        if (Input.GetKey(KeyCode.Alpha1) && coolingTimeLife == 0 && posionLifeCount > 0)
         {
+            posionLifeCount --;
+
             coolingTimeLife = 1;
             Debug.Log("pres 1" );
             StartCoroutine(PotionLifeCorrutine());
         }
-        else
+        else if (Input.GetKey(KeyCode.Alpha1) && posionLifeCount == 0 && !presbuttonAndNotPosion)
         {
-            Debug.Log("Sin posiones de vida");
+            presbuttonAndNotPosion = true;
+
+            potionNumber = 1;
+            StartCoroutine(TextPotions()); ;
         }
-        if (Input.GetKey(KeyCode.Alpha2) && coolingTimeEffects == 0 && posionStrenghtCount != 0)
+        if (Input.GetKey(KeyCode.Alpha2) && coolingTimeEffects == 0 && posionStrenghtCount > 0)
         {
+            posionStrenghtCount--;
+
             coolingTimeEffects = 1;
             Debug.Log("pres 2");
             StartCoroutine(PotionDamageCorrutine());
         }
-        else
+        else if (Input.GetKey(KeyCode.Alpha2) && posionStrenghtCount == 0 && !presbuttonAndNotPosion)
         {
-            Debug.Log("Sin posiones de daño");
+            presbuttonAndNotPosion = true;
 
+            potionNumber = 2;
+            StartCoroutine(TextPotions());
         }
-        if (Input.GetKey(KeyCode.Alpha3) && coolingTimeEffects == 0 && posionDefenseCounts != 0)
+        if (Input.GetKey(KeyCode.Alpha3) && coolingTimeEffects == 0 && posionDefenseCounts > 0)
         {
+            posionDefenseCounts--;
+
             coolingTimeEffects = 1;
             Debug.Log("pres 3");
             StartCoroutine(PotioDefendingCorrutine());
         }
-        else
+        else if (Input.GetKey(KeyCode.Alpha3) && posionDefenseCounts == 0 && !presbuttonAndNotPosion)
         {
-            Debug.Log("Sin posiones de defense");
+            presbuttonAndNotPosion = true;
 
+            potionNumber = 3;
+            StartCoroutine(TextPotions());
+        }
+    }
+    IEnumerator TextPotions()
+    {
+        if (potionNumber == 1)
+        {
+            textPotions.SetActive(true);
+
+            textNotHavePotions.text = ("te quedaste sin posiones de vida");
+
+            yield return new WaitForSeconds(5f);
+
+            textPotions.SetActive(false);
+            presbuttonAndNotPosion = false;
+        }
+        if (potionNumber == 2)
+        {
+            textPotions.SetActive(true);
+
+            textNotHavePotions.text = ("te quedaste sin posiones de daño");
+
+            yield return new WaitForSeconds(5f);
+
+            textPotions.SetActive(false);
+            presbuttonAndNotPosion = false;
+        }
+        if (potionNumber == 3)
+        {
+            textPotions.SetActive(true);
+
+            textNotHavePotions.text = ("te quedaste sin posiones de defensa");
+
+            yield return new WaitForSeconds(5f);
+
+            textPotions.SetActive(false);
+            presbuttonAndNotPosion = false;
         }
     }
     IEnumerator PotionLifeCorrutine()
@@ -128,7 +184,7 @@ public class PlayerInteractions : MonoBehaviour
 
         coolingTimeEffects = 0;
     }
-    private void TextCountPotion()
+    public void TextCountPotion()
     {
         potionText[0].text = posionLifeCount.ToString();
         potionText[1].text = posionStrenghtCount.ToString();

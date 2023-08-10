@@ -4,11 +4,11 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class Dialogos : MonoBehaviour
+public class Shop : MonoBehaviour
 {
     [Header("text dates")]
-    public TextMeshProUGUI dialogueText;
-    public string[] lines;
+    public TextMeshProUGUI dialogueTextDialogues;
+    public string[] linesDIalogues;
 
     public bool writeEnd;
     public bool PanelDialoguesActive;
@@ -28,19 +28,46 @@ public class Dialogos : MonoBehaviour
     public PlayerMovement player;
     public PlayerAttackController player_attack;
 
+    [Header("Shop")]
+    public GameObject interactText;
+    public GameObject panelShop;
+
     void Start()
     {
-        dialogueText.text = string.Empty;
+        dialogueTextDialogues.text = string.Empty;
 
         PanelDialoguesActive = false;
     }
     void Update()
     {
+        if (index == 3)
+        {
+            interactText.SetActive(true);
+
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                interactText.SetActive(false);
+
+                panelShop.SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                dialogueTextDialogues.text = string.Empty;
+
+                PanelDialogues.SetActive(false);
+                pociones.SetActive(true);
+                interactText.SetActive(false);
+
+                PanelDialoguesActive = false;
+            }
+        }
+
         if (canClick)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (dialogueText.text == lines[index])
+                if (dialogueTextDialogues.text == linesDIalogues[index])
                 {
                     NextLine();
                 }
@@ -48,14 +75,14 @@ public class Dialogos : MonoBehaviour
                 {
                     StopAllCoroutines();
 
-                    dialogueText.text = lines[index];
+                    dialogueTextDialogues.text = linesDIalogues[index];
                 }
             }
         }
-        /* if (audioSource != null && typingSound != null)
-         {
-             PlaySound();
-         }*/
+       /* if (audioSource != null && typingSound != null)
+        {
+            PlaySound();
+        }*/
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -98,11 +125,11 @@ public class Dialogos : MonoBehaviour
     {
         writeEnd = false;
 
-        dialogueText.text = string.Empty;
+        dialogueTextDialogues.text = string.Empty;
 
-        foreach (char letter in lines[index].ToCharArray())
+        foreach (char letter in linesDIalogues[index].ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueTextDialogues.text += letter;
 
             yield return new WaitForSeconds(textSpeed);
         }
@@ -111,23 +138,39 @@ public class Dialogos : MonoBehaviour
     }
     public void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < linesDIalogues.Length)
         {
             index++;
-            dialogueText.text = string.Empty;
+            dialogueTextDialogues.text = string.Empty;
 
             StartCoroutine(WriteLine());
         }
-        else
+       /* else if (index == linesDIalogues.Length)
         {
-            dialogueText.text = string.Empty;
+            interactText.SetActive(true);
 
-            PanelDialogues.SetActive(false);
-            pociones.SetActive(true);
-                
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                interactText.SetActive(false);
 
-            PanelDialoguesActive = false;
-        }
+                panelShop.SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                dialogueTextDialogues.text = string.Empty;
+
+                PanelDialogues.SetActive(false);
+                pociones.SetActive(true);
+                interactText.SetActive(false);
+
+                PanelDialoguesActive = false;
+            }
+        }*/
+    }
+    private void ShopFunctionButtons()
+    {
+        
     }
     public void PlaySound()
     {
@@ -144,21 +187,21 @@ public class Dialogos : MonoBehaviour
     {
         if (PanelDialoguesActive == true)
         {
-            player.playerIsWalking = false;
-            player.CanMove = false;
+           player.playerIsWalking = false;
+           player.CanMove = false;
 
-            player.playerAnimator.SetFloat("Speed", 0f);
+           player.playerAnimator.SetFloat("Speed", 0f);
 
-            player_attack.isAttacking = true;
-            player_attack.canAttack = false;
+           player_attack.isAttacking = true;
+           player_attack.canAttack = false;
         }
         else
         {
-            player.playerIsWalking = true;
-            player.CanMove = true;
+           player.playerIsWalking = true;
+           player.CanMove = true;
 
-            player_attack.isAttacking = false;
-            player_attack.canAttack = true;
+           player_attack.isAttacking = false;
+           player_attack.canAttack = true;
         }
     }
 }
