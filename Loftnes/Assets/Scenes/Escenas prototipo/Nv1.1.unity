@@ -10097,6 +10097,7 @@ MonoBehaviour:
   - {fileID: 326848071}
   - {fileID: 1489852527}
   distanciaminima: 0.5
+  agent: {fileID: 0}
 --- !u!95 &2042839087
 Animator:
   serializedVersion: 5
@@ -10110,7 +10111,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6dc1a54b93e434e4ba276ef3897939bf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

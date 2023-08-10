@@ -2,16 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerInteractions : MonoBehaviour
 {
+    [Header("Time Effects")]
     public float coolingTimeLife;
     public float coolingTimeEffects;
     StatsPlayer player;
 
+    [Header("Tipes Effects")]
     public int healingValue;
     public int valueStrength;
     public int defensValue;
+
+    [Header("Potion Count")]
+    public TMP_Text[] potionText;
+
+    public int posionLifeCount;
+    public int posionStrenghtCount;
+    public int posionDefenseCounts;
 
     public void Start()
     {
@@ -25,23 +35,37 @@ public class PlayerInteractions : MonoBehaviour
 
     private void ButtonsComands()
     {
-        if (Input.GetKey(KeyCode.Alpha1) && coolingTimeLife == 0)
+        if (Input.GetKey(KeyCode.Alpha1) && coolingTimeLife == 0 && posionLifeCount != 0)
         {
             coolingTimeLife = 1;
             Debug.Log("pres 1" );
             StartCoroutine(PotionLifeCorrutine());
         }
-        if (Input.GetKey(KeyCode.Alpha2) && coolingTimeEffects == 0)
+        else
+        {
+            Debug.Log("Sin posiones de vida");
+        }
+        if (Input.GetKey(KeyCode.Alpha2) && coolingTimeEffects == 0 && posionStrenghtCount != 0)
         {
             coolingTimeEffects = 1;
             Debug.Log("pres 2");
             StartCoroutine(PotionDamageCorrutine());
         }
-        if (Input.GetKey(KeyCode.Alpha3) && coolingTimeEffects == 0)
+        else
+        {
+            Debug.Log("Sin posiones de daño");
+
+        }
+        if (Input.GetKey(KeyCode.Alpha3) && coolingTimeEffects == 0 && posionDefenseCounts != 0)
         {
             coolingTimeEffects = 1;
             Debug.Log("pres 3");
             StartCoroutine(PotioDefendingCorrutine());
+        }
+        else
+        {
+            Debug.Log("Sin posiones de defense");
+
         }
     }
     IEnumerator PotionLifeCorrutine()
@@ -103,5 +127,11 @@ public class PlayerInteractions : MonoBehaviour
         player.Maxdefending -= defensValue;
 
         coolingTimeEffects = 0;
+    }
+    private void TextCountPotion()
+    {
+        potionText[0].text = posionLifeCount.ToString();
+        potionText[1].text = posionStrenghtCount.ToString();
+        potionText[2].text = posionDefenseCounts.ToString();
     }
 }

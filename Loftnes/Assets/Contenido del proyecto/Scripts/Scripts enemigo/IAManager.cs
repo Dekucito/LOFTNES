@@ -41,11 +41,11 @@ public class IAManager : MonoBehaviour
     }
     private void Update()
     {
-        FollowPlayer();
+       FollowPlayer();
 
-        animator.SetInteger("Direction", 1);
+       //animator.SetInteger("Direction", 1);
 
-        AnimationsMove();
+       AnimationsMove();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
