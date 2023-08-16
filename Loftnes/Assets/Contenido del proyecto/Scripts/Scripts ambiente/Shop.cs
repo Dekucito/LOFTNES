@@ -6,175 +6,174 @@ using System;
 
 public class Shop : MonoBehaviour
 {
-    [Header("text dates")]
+    [Header("Text dates")]
     public TextMeshProUGUI dialogueTextDialogues;
     public string[] linesDIalogues;
-
-    public bool writeEnd;
-    public bool PanelDialoguesActive;
-    public bool canClick;
-
     public float textSpeed = 0.1f;
-    [SerializeField]
-    int index;
 
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip typingSound;
 
+    [Header("UI Elements")]
     public GameObject PanelDialogues;
     public GameObject pociones;
+    public GameObject interactText;
+    public GameObject panelShop;
 
     [Header("Player")]
     public PlayerMovement player;
     public PlayerAttackController player_attack;
 
-    [Header("Shop")]
-    public GameObject interactText;
-    public GameObject panelShop;
+    // Private variables to track state
+    public bool writeEnd;
+    public int index;
+    public bool interactShop;
+    public bool shopFunctions;
+    public bool canClick;
+    public bool PanelDialoguesActive;
 
-    void Start()
+    private void Start()
+    {
+        ResetDialogueState();
+    }
+
+    private void Update()
+    {
+        HandleShopFunctions();
+        HandleDialogueInteraction();
+        HandlePlayerChanges();
+    }
+
+    private void ResetDialogueState()
     {
         dialogueTextDialogues.text = string.Empty;
-
+        writeEnd = false;
+        index = 0;
+        interactShop = false;
+        shopFunctions = false;
+        canClick = false;
         PanelDialoguesActive = false;
     }
-    void Update()
+
+    private void HandleShopFunctions()
     {
-        if (index == 3)
+        if (shopFunctions)
         {
+            HandleShopInteraction();
+        }
+    }
+
+    private void HandleShopInteraction()
+    {
+        if (!interactShop)
+        {
+            dialogueTextDialogues.text = string.Empty;
             interactText.SetActive(true);
-
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                interactText.SetActive(false);
-
-                panelShop.SetActive(true);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                dialogueTextDialogues.text = string.Empty;
-
-                PanelDialogues.SetActive(false);
-                pociones.SetActive(true);
-                interactText.SetActive(false);
-
-                PanelDialoguesActive = false;
-            }
         }
 
-        if (canClick)
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (dialogueTextDialogues.text == linesDIalogues[index])
-                {
-                    NextLine();
-                }
-                else
-                {
-                    StopAllCoroutines();
-
-                    dialogueTextDialogues.text = linesDIalogues[index];
-                }
-            }
-        }
-       /* if (audioSource != null && typingSound != null)
-        {
-            PlaySound();
-        }*/
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            PlayerChangues();
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
+            interactShop = true;
             canClick = false;
+            panelShop.SetActive(true);
+            interactText.SetActive(false);
+            PanelDialogues.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitShop();
         }
     }
-    public void OnTriggerEnter2D(Collider2D other)
+
+    private void ExitShop()
+    {
+        PanelDialogues.SetActive(false);
+        interactText.SetActive(false);
+        panelShop.SetActive(false);
+        pociones.SetActive(true);
+
+        PanelDialoguesActive = false;
+        interactShop = false;
+        shopFunctions = false;
+    }
+
+    private void HandleDialogueInteraction()
+    {
+        if (canClick && Input.GetMouseButtonDown(0))
+        {
+            if (dialogueTextDialogues.text == linesDIalogues[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                dialogueTextDialogues.text = linesDIalogues[index];
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            canClick = true;
-
-            if (PanelDialoguesActive == false)
-            {
-                PanelDialoguesActive = true;
-
-                pociones.SetActive(false);
-
-                PanelDialogues.SetActive(true);
-                StartDialogueForTrigger();
-            }
+            StartDialogue();
         }
     }
-    public void StartDialogueForTrigger()
+
+    private void StartDialogue()
+    {
+        canClick = true;
+
+        if (!PanelDialoguesActive)
+        {
+            PanelDialoguesActive = true;
+            pociones.SetActive(false);
+            PanelDialogues.SetActive(true);
+            StartDialogueForTrigger();
+        }
+    }
+
+    private void StartDialogueForTrigger()
     {
         index = 0;
-
         StartCoroutine(WriteLine());
     }
-    public IEnumerator WriteLine()
+
+    private IEnumerator WriteLine()
     {
         writeEnd = false;
-
         dialogueTextDialogues.text = string.Empty;
 
         foreach (char letter in linesDIalogues[index].ToCharArray())
         {
             dialogueTextDialogues.text += letter;
-
             yield return new WaitForSeconds(textSpeed);
         }
 
         writeEnd = true;
     }
-    public void NextLine()
+
+    private void NextLine()
     {
-        if (index < linesDIalogues.Length)
+        if (index < linesDIalogues.Length - 1)
         {
+            shopFunctions = false;
             index++;
             dialogueTextDialogues.text = string.Empty;
-
             StartCoroutine(WriteLine());
         }
-       /* else if (index == linesDIalogues.Length)
+        else
         {
-            interactText.SetActive(true);
-
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                interactText.SetActive(false);
-
-                panelShop.SetActive(true);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                dialogueTextDialogues.text = string.Empty;
-
-                PanelDialogues.SetActive(false);
-                pociones.SetActive(true);
-                interactText.SetActive(false);
-
-                PanelDialoguesActive = false;
-            }
-        }*/
+            shopFunctions = true;
+        }
     }
-    private void ShopFunctionButtons()
+
+    private void PlaySound()
     {
-        
-    }
-    public void PlaySound()
-    {
-        if (!audioSource.isPlaying && writeEnd == false)
+        if (!audioSource.isPlaying && !writeEnd)
         {
             audioSource.PlayOneShot(typingSound);
         }
@@ -183,25 +182,23 @@ public class Shop : MonoBehaviour
             //audioSource.Stop();
         }
     }
-    public void PlayerChangues()
+
+    private void HandlePlayerChanges()
     {
-        if (PanelDialoguesActive == true)
+        if (PanelDialoguesActive)
         {
-           player.playerIsWalking = false;
-           player.CanMove = false;
-
-           player.playerAnimator.SetFloat("Speed", 0f);
-
-           player_attack.isAttacking = true;
-           player_attack.canAttack = false;
+            player.playerIsWalking = false;
+            player.CanMove = false;
+            player.playerAnimator.SetFloat("Speed", 0f);
+            player_attack.isAttacking = true;
+            player_attack.canAttack = false;
         }
         else
         {
-           player.playerIsWalking = true;
-           player.CanMove = true;
-
-           player_attack.isAttacking = false;
-           player_attack.canAttack = true;
+            player.playerIsWalking = true;
+            player.CanMove = true;
+            player_attack.isAttacking = false;
+            player_attack.canAttack = true;
         }
     }
 }
