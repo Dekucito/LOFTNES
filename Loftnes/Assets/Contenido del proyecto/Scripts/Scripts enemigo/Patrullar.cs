@@ -15,7 +15,7 @@ public class Patrullar : MonoBehaviour
     private int Siguientepaso;
 
     [Header("Follow")]
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
 
     private void Awake()
@@ -33,7 +33,6 @@ public class Patrullar : MonoBehaviour
     }
     public void Move()
     {
-        //transform.position = Vector2.MoveTowards(transform.position, puntosmovimiento[Siguientepaso].position, velocidadmovimiento * Time.deltaTime);
         agent.SetDestination(puntosmovimiento[Siguientepaso].position);
 
         if (Vector2.Distance(transform.position, puntosmovimiento[Siguientepaso].position) < distanciaminima)
