@@ -2165,9 +2165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_CollectObjects: 1
+  m_Size: {x: 47.040176, y: 10, z: 13.018555}
+  m_Center: {x: 0.9118538, y: 2, z: -1.1948442}
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2181,7 +2181,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 81378ddd22976c54eb65cc02f1320c0b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 9cee69e5c7e52c149a8c84e3bb70ba9b, type: 2}
 --- !u!4 &1231711603
 Transform:
   m_ObjectHideFlags: 0
@@ -9438,9 +9438,13 @@ MonoBehaviour:
   valueStrength: 10
   defensValue: 10
   potionText: []
+  textNotHavePotions: {fileID: 0}
+  textPotions: {fileID: 0}
+  potionNumber: 0
   posionLifeCount: 0
   posionStrenghtCount: 0
   posionDefenseCounts: 0
+  presbuttonAndNotPosion: 0
 --- !u!114 &1757834255
 MonoBehaviour:
   m_ObjectHideFlags: 0
