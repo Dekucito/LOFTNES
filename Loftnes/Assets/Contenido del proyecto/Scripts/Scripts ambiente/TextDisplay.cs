@@ -12,10 +12,14 @@ public class TextDisplay : MonoBehaviour
     public int currentIndex = 0;
     private Coroutine currentDisplayCoroutine;
 
+    public GameObject panelText;
+
     private IEnumerator DisplayMessagesCoroutine()
     {
         while (currentIndex < messages.Count)
         {
+            panelText.SetActive(true);
+
             textObject.text = messages[currentIndex];
             yield return new WaitForSeconds(messageDuration);
             currentIndex++;
@@ -43,6 +47,8 @@ public class TextDisplay : MonoBehaviour
         {
             StopCoroutine(currentDisplayCoroutine);
             currentDisplayCoroutine = null;
+
+            panelText.SetActive(false);
         }
     }
 }

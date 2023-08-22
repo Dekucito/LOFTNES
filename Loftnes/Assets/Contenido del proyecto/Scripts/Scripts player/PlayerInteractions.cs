@@ -21,6 +21,7 @@ public class PlayerInteractions : MonoBehaviour
     public TMP_Text textNotHavePotions;
     public GameObject textPotions;
 
+    public int maxPotionsCount;
     public int potionNumber;
     public int posionLifeCount;
     public int posionStrenghtCount;
@@ -88,6 +89,7 @@ public class PlayerInteractions : MonoBehaviour
             StartCoroutine(TextPotions());
         }
     }
+
     IEnumerator TextPotions()
     {
         if (potionNumber == 1)
@@ -124,6 +126,7 @@ public class PlayerInteractions : MonoBehaviour
             presbuttonAndNotPosion = false;
         }
     }
+
     IEnumerator PotionLifeCorrutine()
     {
         if (player.currentHealth > 0)
@@ -158,6 +161,7 @@ public class PlayerInteractions : MonoBehaviour
             Debug.Log("No puedes usar una poción de salud, ya que tu vida actual es 0.");
         }
     }
+
     IEnumerator PotionDamageCorrutine()
     {
         //activar animacion de pocion de fuerza
@@ -171,6 +175,7 @@ public class PlayerInteractions : MonoBehaviour
 
         coolingTimeEffects = 0;
     } 
+
     IEnumerator PotioDefendingCorrutine()
     {
         //activar animacion de pocion de defensa
@@ -184,10 +189,31 @@ public class PlayerInteractions : MonoBehaviour
 
         coolingTimeEffects = 0;
     }
+
     public void TextCountPotion()
     {
         potionText[0].text = posionLifeCount.ToString();
         potionText[1].text = posionStrenghtCount.ToString();
         potionText[2].text = posionDefenseCounts.ToString();
+    }
+
+    public void AddPotion()
+    {
+        if (posionLifeCount < maxPotionsCount)
+        {
+            posionLifeCount += 1;
+        }
+        if (posionStrenghtCount < maxPotionsCount)
+        {
+            posionStrenghtCount += 1;
+        }
+        if (posionDefenseCounts < maxPotionsCount)
+        {
+            posionDefenseCounts += 1;
+        }
+        else
+        {
+            Debug.Log("no puedes llevar mas pociones");
+        }
     }
 }

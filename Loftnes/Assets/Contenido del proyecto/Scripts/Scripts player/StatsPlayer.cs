@@ -59,7 +59,7 @@ public class StatsPlayer : MonoBehaviour
             Debug.Log("No tienes suficiente dinero.");
         }
     }
-    private void UpdateMoneyText()
+    public void UpdateMoneyText()
     {
         moneyText.text = currentMoney.ToString();
     }

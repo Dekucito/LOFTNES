@@ -25,6 +25,7 @@ public class Shop : MonoBehaviour
     public PlayerMovement player;
     public PlayerAttackController player_attack;
 
+
     // Private variables to track state
     public bool writeEnd;
     public int index;
@@ -32,6 +33,7 @@ public class Shop : MonoBehaviour
     public bool shopFunctions;
     public bool canClick;
     public bool PanelDialoguesActive;
+    public bool pressEscForSalir;
 
     private void Start()
     {
@@ -84,6 +86,7 @@ public class Shop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ExitShop();
+            pressEscForSalir = true;
         }
     }
 
@@ -120,6 +123,14 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartDialogue();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canClick = false;
         }
     }
 
@@ -193,12 +204,14 @@ public class Shop : MonoBehaviour
             player_attack.isAttacking = true;
             player_attack.canAttack = false;
         }
-        else
+        else if (pressEscForSalir)
         {
             player.playerIsWalking = true;
             player.CanMove = true;
             player_attack.isAttacking = false;
             player_attack.canAttack = true;
+
+            pressEscForSalir = false;
         }
     }
 }
