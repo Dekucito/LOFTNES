@@ -63,4 +63,19 @@ public class StatsPlayer : MonoBehaviour
     {
         moneyText.text = currentMoney.ToString();
     }
+
+    public void IncreaseHealth(int upgrades)
+    {
+        maxHealth += 10 * upgrades; // Aumenta la salud por 10 unidades por cada mejora
+    }
+
+    public void IncreaseDamage(int upgrades)
+    {
+        Maxdamage += 5 * upgrades; // Aumenta el daño por 5 unidades por cada mejora
+    }
+
+    public void IncreaseDefense(int upgrades)
+    {
+        Maxdefending += 2 * upgrades; // Aumenta la defensa por 2 unidades por cada mejora
+    }
 }
