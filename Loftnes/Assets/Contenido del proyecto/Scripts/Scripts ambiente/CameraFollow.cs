@@ -4,57 +4,61 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [Header("Player")]
-    public GameObject target;
+    public GameObject target_player; // Referencia al objeto que la cámara seguirá
 
-    private float target_poseX;
-    private float target_poseY;
+    private float target_posX;
+    private float target_posY;
 
-    [Header("camera")]
-    public float posX;
-    public float posY;
+    private float posX;
+    private float posY;
 
-    public float speed;
-    public bool encendida = true;
-
-    [Header("limite")]
     public float derechaMax;
-    public float izquierdaMax;
+    public float izquierdaMAx;
 
     public float alturaMax;
     public float alturaMin;
 
+    public float speed;
+    public bool encendida = true;
+
     private void Awake()
     {
-        posX = target_poseX + derechaMax;
-        posY = target_poseY + alturaMin;
+        posX = target_posX + derechaMax;
+        posY = target_posY + alturaMin;
 
+        // Establecer la posición inicial de la cámara
         transform.position = Vector3.Lerp(transform.position, new Vector3(posX, posY, -1), 1);
     }
-    private void Update()
-    {
-        Move_Cam();
-    }
+
     void Move_Cam()
     {
         if (encendida)
         {
-            if (target)
+            if (target_player)
             {
-                target_poseX = target.transform.position.x;
-                target_poseY = target.transform.position.y;
+                target_posX = target_player.transform.position.x;
+                target_posY = target_player.transform.position.y;
 
-                if (target_poseX > derechaMax && target_poseX < izquierdaMax)
+                // Ajustar la posición horizontal de la cámara si el objetivo está dentro de los límites
+                if (target_posX > derechaMax && target_posX < izquierdaMAx)
                 {
-                    posX = target_poseX;
+                    posX = target_posX;
                 }
-                if (target_poseY < alturaMax && target_poseY > alturaMin)
+
+                // Ajustar la posición vertical de la cámara si el objetivo está dentro de los límites
+                if (target_posY < alturaMax && target_posY > alturaMin)
                 {
-                    posY = target_poseY;
+                    posY = target_posY;
                 }
             }
 
+            // Mover suavemente la cámara hacia la nueva posición
             transform.position = Vector3.Lerp(transform.position, new Vector3(posX, posY, -1), speed * Time.deltaTime);
         }
+    }
+
+    private void Update()
+    {
+        Move_Cam(); // Llamar a la función de seguimiento de la cámara en cada fotograma
     }
 }

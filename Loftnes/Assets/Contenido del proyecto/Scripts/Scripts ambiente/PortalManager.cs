@@ -13,7 +13,8 @@ public class PortalManager : MonoBehaviour
     public Color color;
 
     [Header("scripts")]
-    public PlayerMovement player;
+    public PlayerActions player;
+    PlayerMovement player_2;
 
     [Header("bools")]
     public bool panelCantActive;
@@ -40,7 +41,7 @@ public class PortalManager : MonoBehaviour
     }
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        player_2 = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         gameObject.AddComponent<AudioSource>();
     }
     private void Update()
@@ -67,7 +68,7 @@ public class PortalManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player.playerAnimator.SetFloat("Speed", 0f);
+            player_2.playerAnimator.SetFloat("Speed", 0f);
 
             if (EndCorrutine)
             {
@@ -83,10 +84,7 @@ public class PortalManager : MonoBehaviour
                 }
                 if (PanelActive)
                 {
-                    player.playerAnimator.SetFloat("Speed", 0f);
-
-                    player.playerIsWalking = false;
-                    player.CanMove = false;
+                    player.PlayerCantActions();
 
                     if (Input.GetKey(KeyCode.Escape))
                     {
@@ -97,15 +95,13 @@ public class PortalManager : MonoBehaviour
                 }
                 else if (!PanelActive)
                 {
-                    player.playerIsWalking = true;
-                    player.CanMove = true;
+                    player.PlayerCanActions();
                 }
             }
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("SALIO DE EL TRIGGER");
         if (other.CompareTag("Player"))
         {
             targetColor = new Color(1, 1, 1, 0);
@@ -150,8 +146,7 @@ public class PortalManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         source.PlayOneShot(sonidosTP[0]); // el [0] es de entrada a el portal
 
-        player.playerIsWalking = false;
-        player.CanMove = false;
+        player.PlayerCantActions();
 
         yield return new WaitForSeconds(1);
 
@@ -159,8 +154,7 @@ public class PortalManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        player.playerIsWalking = true;
-        player.CanMove = true;
+        player.PlayerCanActions();
 
         panelCantActive = true;
         activeCoroutine = null; // Reiniciar la referencia a la corrutina activa
@@ -174,8 +168,7 @@ public class PortalManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         previousDisabled = true;
 
-        player.playerIsWalking = false;
-        player.CanMove = false;
+        player.PlayerCantActions();
 
         source.PlayOneShot(sonidosTP[1]); // el [1] es de activacion del portal
         yield return new WaitForSeconds(1);
@@ -189,8 +182,7 @@ public class PortalManager : MonoBehaviour
         Teleport();
         previousDisabled = false;
 
-        player.playerIsWalking = true;
-        player.CanMove = true;
+        player.PlayerCanActions();
 
         activeCoroutine = null; // Reiniciar la referencia a la corrutina activa
 

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public int numberMaxUpgrades = 20;
 
+    public bool isTheFirstGame;
+
     public TMP_Text[] numberText;
     public TMP_Text upgradesRemainingText; // Texto para mostrar las mejoras restantes
     public TMP_Text textoUpgrade;

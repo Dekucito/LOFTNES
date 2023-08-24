@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-       [SerializeField] private float speed = 3f;
+    [SerializeField] private float speed = 3f;
 
     [Header("Move")]
     private Rigidbody2D playerRb;

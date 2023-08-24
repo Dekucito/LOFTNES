@@ -22,8 +22,7 @@ public class Shop : MonoBehaviour
     public GameObject panelShop;
 
     [Header("Player")]
-    public PlayerMovement player;
-    public PlayerAttackController player_attack;
+    public PlayerActions playerActions;
 
 
     // Private variables to track state
@@ -198,18 +197,11 @@ public class Shop : MonoBehaviour
     {
         if (PanelDialoguesActive)
         {
-            player.playerIsWalking = false;
-            player.CanMove = false;
-            player.playerAnimator.SetFloat("Speed", 0f);
-            player_attack.isAttacking = true;
-            player_attack.canAttack = false;
+            playerActions.PlayerCantActions();  
         }
         else if (pressEscForSalir)
         {
-            player.playerIsWalking = true;
-            player.CanMove = true;
-            player_attack.isAttacking = false;
-            player_attack.canAttack = true;
+            playerActions.PlayerCanActions();  
 
             pressEscForSalir = false;
         }

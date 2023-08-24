@@ -80,12 +80,9 @@ public class EnemyAttack : MonoBehaviour
     {
         attackStarted = true; // Indicamos que se ha iniciado un ataque
 
-        Debug.Log("entra en la corrutina;");
         animator.SetInteger("attack", IA.direction);
 
-        Debug.Log("envio parametro a animacion");
         yield return new WaitForSeconds(0.2f);
-        Debug.Log("espero 0.2f");
 
         // Esperar la duración de la animación de ataque antes de restablecer isAttacking a false
         yield return new WaitForSeconds(0.5f); // Reemplaza 'animacionDuracion' con la duración real de la animación de ataque
