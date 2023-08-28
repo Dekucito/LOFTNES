@@ -6,7 +6,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [Header("panel de mejoras")]
-
     public int upgradesVida;
     public int upgradesDaño;
     public int upgradesDefensa;
@@ -14,18 +13,60 @@ public class GameManager : MonoBehaviour
 
     public int numberMaxUpgrades = 20;
 
-    public bool isTheFirstGame;
 
     public TMP_Text[] numberText;
     public TMP_Text upgradesRemainingText; // Texto para mostrar las mejoras restantes
     public TMP_Text textoUpgrade;
 
+    [Header("Scripts")]
     public ButtonUpgradeFunctions upgradeStats;
     public StatsPlayer moneyPlayer;
+    public PlayerActions player_actions;
+
+    [Header("Objects")]
+    private static GameManager _instance;
+    public GameObject canvasPlayer;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameManager>();
+
+                if (_instance == null)
+                {
+                    GameObject singletonObject = new GameObject("MySingleton");
+                    _instance = singletonObject.AddComponent<GameManager>();
+                }
+            }
+            return _instance;
+        }
+    }
+
 
     private void Awake()
     {
         upgradesRemainingText.text = "Upgrades Remaining: " + numberMaxUpgrades.ToString();
+
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            if (this != _instance)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
+    private void Start()
+    {
+        canvasPlayer.SetActive(false);
+        player_actions.PlayerCantActions();
     }
     private void Update()
     {

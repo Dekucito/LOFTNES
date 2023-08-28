@@ -11,9 +11,10 @@ public class PlayerActions : MonoBehaviour
     {
         movementPlayer.playerIsWalking = false;
         movementPlayer.CanMove = false;
-        movementPlayer.playerAnimator.SetFloat("Speed", 0f);
         playerAttack.isAttacking = true;
         playerAttack.canAttack = false;
+
+        movementPlayer.playerAnimator.SetFloat("Speed", 0f);
     }
     public void PlayerCanActions()
     {

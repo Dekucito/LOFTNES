@@ -24,8 +24,6 @@ public class StatsPlayer : MonoBehaviour
     public void Start()
     {
         moneyLogo.SetActive(true);
-
-        currentMoney = startingMoney;
         UpdateMoneyText();
     }
     private void Update()

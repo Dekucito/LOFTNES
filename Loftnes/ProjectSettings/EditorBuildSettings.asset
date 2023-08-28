@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Scenas principales/Menus.unity
+    guid: 1b9b0c8f000387b439b81140649781af
+  - enabled: 1
+    path: Assets/Scenes/Escenas de integrantes/Escenas Andres/Scene Andres.unity
+    guid: 30a794c288e34084db9482761e7c6ec0
   m_configObjects: {}

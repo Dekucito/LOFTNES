@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ObjectsOfMap
   - Enemy
+  - Controller
   layers:
   - Default
   - TransparentFX
