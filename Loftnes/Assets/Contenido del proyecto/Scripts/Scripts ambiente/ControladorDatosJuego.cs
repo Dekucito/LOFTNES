@@ -42,7 +42,7 @@ public class ControladorDatosJuego : MonoBehaviour
     {
         if (theFirstGame)
         {
-            StartCoroutine(FirstGameRutine());
+            StartCoroutine(NewGameRutine());
         }
     }
 
@@ -55,9 +55,10 @@ public class ControladorDatosJuego : MonoBehaviour
 
             Debug.Log("posicion del jugador: " + datosJuego.theLastPlayerPosition);
 
+            player.GetComponent<StatsPlayer>().maxHealth = datosJuego.theLastPlayerMaxLife;
             player.transform.position = datosJuego.theLastPlayerPosition;
-            player.GetComponent<StatsPlayer>().currentMoney = datosJuego.theLastPlayerMoney;
-            player.GetComponent<StatsPlayer>().currentHealth = datosJuego.theLastPlayerLife;
+            player.GetComponent<StatsPlayer>().currentMoney = datosJuego.theLastPlayerCurrentMoney;
+            player.GetComponent<StatsPlayer>().currentHealth = datosJuego.theLastPlayerCurrentLife;
         }
         else
         {
@@ -78,9 +79,10 @@ public class ControladorDatosJuego : MonoBehaviour
     {
         DatosJuegos nuevosDatos = new DatosJuegos()
         {
+            theLastPlayerMaxLife = player.GetComponent<StatsPlayer>().maxHealth,
             theLastPlayerPosition = player.transform.position,
-            theLastPlayerLife = player.GetComponent<StatsPlayer>().currentHealth,
-            theLastPlayerMoney = player.GetComponent<StatsPlayer>().currentMoney,
+            theLastPlayerCurrentLife = player.GetComponent<StatsPlayer>().currentHealth,
+            theLastPlayerCurrentMoney = player.GetComponent<StatsPlayer>().currentMoney,
             GameExist = true
         };
 
@@ -105,8 +107,7 @@ public class ControladorDatosJuego : MonoBehaviour
         }
     }
 
-
-    IEnumerator FirstGameRutine()
+    IEnumerator NewGameRutine()
     {
         gameManager.canvasMenus.SetActive(false);
         gameManager.panelConfirmation.SetActive(false);
@@ -114,9 +115,7 @@ public class ControladorDatosJuego : MonoBehaviour
         gameManager.canvasPlayer.SetActive(true);
         panelLoad.SetActive(true);
 
-        yield return new WaitForSeconds(3f);
-        
-        player_Actions.PlayerCantActions();
+        yield return new WaitForSeconds(2f);
 
         player.GetComponent<StatsPlayer>().startingMoney = 50;
         player.GetComponent<StatsPlayer>().currentMoney = 50;
@@ -127,7 +126,28 @@ public class ControladorDatosJuego : MonoBehaviour
 
         GuardadoDatos();
 
+        yield return new WaitForSeconds(1f);
+
+        panelLoad.SetActive(false);
+        player_Actions.PlayerCanActions();
+
+        gameExist = datosJuego.GameExist;
+    }
+
+    public IEnumerator LoadGameRutine()
+    {
+        gameManager.canvasMenus.SetActive(false);
+        gameManager.panelConfirmation.SetActive(false);
+
+        gameManager.canvasPlayer.SetActive(true);
+        panelLoad.SetActive(true);
+
         yield return new WaitForSeconds(2f);
+
+        player_Actions.PlayerCantActions();
+        CargarDatos();
+
+        yield return new WaitForSeconds(1f);
 
         panelLoad.SetActive(false);
         player_Actions.PlayerCanActions();

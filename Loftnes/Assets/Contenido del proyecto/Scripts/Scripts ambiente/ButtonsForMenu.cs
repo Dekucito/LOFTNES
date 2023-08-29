@@ -35,13 +35,14 @@ public class ButtonsForMenu : MonoBehaviour
     {
         if (controladorJuego.gameExist)
         {
-            controladorJuego.CargarDatos();
+            StartCoroutine(controladorJuego.LoadGameRutine());
         }
     }
 
     public void ButtonDeleteDatesOfGame()
     {
         controladorJuego.EliminarDatos();
+        controladorJuego.gameExist = false;
     }
 
     public void ButtonConfirm(bool IsNewGame)

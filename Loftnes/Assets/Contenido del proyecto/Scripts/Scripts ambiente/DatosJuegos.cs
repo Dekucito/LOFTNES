@@ -5,11 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class DatosJuegos
 {
-    [Header("datos del player a guardar ")]
+    [Header("Ultimos datos ingresados ")]
+
     public Vector3 theLastPlayerPosition;
-    public float theLastPlayerLife;
-    public int theLastPlayerMoney;
+    public float theLastPlayerCurrentLife;
+    public float theLastPlayerMaxLife;
+    public int theLastPlayerCurrentMoney;
 
     public bool GameExist;
-
 }

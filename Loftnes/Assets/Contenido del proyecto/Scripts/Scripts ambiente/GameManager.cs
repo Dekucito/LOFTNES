@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     public void OkButton()
     {
         int totalUpgradesToApply = upgradesVida + upgradesDaño + upgradesDefensa;
-        int totalPriceUpgrades = (upgradesPrice * upgradesVida) + (upgradesPrice * upgradesDefensa) + (upgradesPrice * upgradesDefensa);
+        int totalPriceUpgrades = (upgradesPrice * upgradesVida) + (upgradesPrice * upgradesDefensa) + (upgradesPrice * upgradesDaño);
 
 
         if (totalUpgradesToApply > 0 && totalUpgradesToApply <= numberMaxUpgrades && totalPriceUpgrades <= moneyPlayer.currentMoney)
