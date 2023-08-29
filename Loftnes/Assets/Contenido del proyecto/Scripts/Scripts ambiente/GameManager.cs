@@ -23,9 +23,12 @@ public class GameManager : MonoBehaviour
     public StatsPlayer moneyPlayer;
     public PlayerActions player_actions;
 
-    [Header("Objects")]
+    [Header("Objects or canvas")]
     private static GameManager _instance;
+
     public GameObject canvasPlayer;
+    public GameObject canvasMenus;
+    public GameObject panelConfirmation;
 
     public static GameManager Instance
     {

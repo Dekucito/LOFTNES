@@ -5,30 +5,52 @@ using UnityEngine.SceneManagement;
 public class ButtonsForMenu : MonoBehaviour
 {
     public ControladorDatosJuego controladorJuego;
+    public GameManager gameManager;
 
-    public bool gameExist = false;
-    
+    public bool confirmation;
+
+    private void Update()
+    {
+        if (confirmation)
+        {
+            gameManager.panelConfirmation.SetActive(true);
+
+            confirmation = false;
+        }  
+    }
+
     public void ButtonNewGame(bool isNewGame)
     {
-        controladorJuego.PrimerInicioDeJuego(isNewGame);
-
-        gameExist = true;
+        if (!controladorJuego.gameExist)
+        {
+            controladorJuego.PrimerInicioDeJuego(isNewGame);
+        }
+        else
+        {
+            confirmation = true;
+        }
     }
 
     public void ButtonLoadGame()
     {
-        if (gameExist)
+        if (controladorJuego.gameExist)
         {
-            ChangueScene(sceneInt);
             controladorJuego.CargarDatos();
         }
     }
-    public void ChangueScene(int indexOfScene)
-    {
-      
-    }
-    //public IEnumerator NewGameRutine()
-    // {
 
-    //}
+    public void ButtonDeleteDatesOfGame()
+    {
+        controladorJuego.EliminarDatos();
+    }
+
+    public void ButtonConfirm(bool IsNewGame)
+    {
+        controladorJuego.PrimerInicioDeJuego(IsNewGame);
+    }
+
+    public void ButtonBack()
+    {
+        gameManager.panelConfirmation.SetActive(false);
+    }
 }
