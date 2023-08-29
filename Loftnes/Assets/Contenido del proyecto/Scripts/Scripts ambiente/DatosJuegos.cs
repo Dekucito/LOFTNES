@@ -11,6 +11,4 @@ public class DatosJuegos
     public float theLastPlayerCurrentLife;
     public float theLastPlayerMaxLife;
     public int theLastPlayerCurrentMoney;
-
-    public bool GameExist;
 }

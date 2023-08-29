@@ -16,8 +16,6 @@ public class ControladorDatosJuego : MonoBehaviour
 
     public DatosJuegos datosJuego = new DatosJuegos();
 
-    public bool gameExist;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
@@ -33,9 +31,6 @@ public class ControladorDatosJuego : MonoBehaviour
     private void Awake()
     {
         archivoGuardado = Application.dataPath + "/datosJuego.Json";
-
-        CargarDatosForPlay();
-        gameExist = datosJuego.GameExist;
     }
 
     public void PrimerInicioDeJuego(bool theFirstGame)
@@ -65,16 +60,6 @@ public class ControladorDatosJuego : MonoBehaviour
             Debug.Log("el archivo no existe");
         }
     }
-
-    public void CargarDatosForPlay()
-    {
-        if (File.Exists(archivoGuardado))
-        {
-            string contenido = File.ReadAllText(archivoGuardado);
-            datosJuego = JsonUtility.FromJson<DatosJuegos>(contenido);
-        }
-    }
-
     public void GuardadoDatos()
     {
         DatosJuegos nuevosDatos = new DatosJuegos()
@@ -83,7 +68,6 @@ public class ControladorDatosJuego : MonoBehaviour
             theLastPlayerPosition = player.transform.position,
             theLastPlayerCurrentLife = player.GetComponent<StatsPlayer>().currentHealth,
             theLastPlayerCurrentMoney = player.GetComponent<StatsPlayer>().currentMoney,
-            GameExist = true
         };
 
         string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
@@ -99,7 +83,6 @@ public class ControladorDatosJuego : MonoBehaviour
         {
             File.Delete(archivoGuardado);
             Debug.Log("Datos del juego eliminados");
-            gameExist = false;
         }
         else
         {
@@ -110,7 +93,7 @@ public class ControladorDatosJuego : MonoBehaviour
     IEnumerator NewGameRutine()
     {
         gameManager.canvasMenus.SetActive(false);
-        gameManager.panelConfirmation.SetActive(false);
+        gameManager.panelConfirmationNewGame.SetActive(false);
 
         gameManager.canvasPlayer.SetActive(true);
         panelLoad.SetActive(true);
@@ -130,14 +113,12 @@ public class ControladorDatosJuego : MonoBehaviour
 
         panelLoad.SetActive(false);
         player_Actions.PlayerCanActions();
-
-        gameExist = datosJuego.GameExist;
     }
 
     public IEnumerator LoadGameRutine()
     {
         gameManager.canvasMenus.SetActive(false);
-        gameManager.panelConfirmation.SetActive(false);
+        gameManager.panelConfirmationNewGame.SetActive(false);
 
         gameManager.canvasPlayer.SetActive(true);
         panelLoad.SetActive(true);
@@ -151,7 +132,5 @@ public class ControladorDatosJuego : MonoBehaviour
 
         panelLoad.SetActive(false);
         player_Actions.PlayerCanActions();
-
-        gameExist = datosJuego.GameExist;
     }
 }

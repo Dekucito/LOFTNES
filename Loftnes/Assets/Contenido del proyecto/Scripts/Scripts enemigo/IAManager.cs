@@ -43,8 +43,6 @@ public class IAManager : MonoBehaviour
     {
        FollowPlayer();
 
-       //animator.SetInteger("Direction", 1);
-
        AnimationsMove();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,13 +54,7 @@ public class IAManager : MonoBehaviour
             arma.SetActive(true);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
 
-        }
-    }
     private void FollowPlayer()
     {
         float distancia = Vector3.Distance(player.position, this.transform.position);

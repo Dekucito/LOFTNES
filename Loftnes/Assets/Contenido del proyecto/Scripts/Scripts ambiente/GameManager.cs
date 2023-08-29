@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject canvasPlayer;
     public GameObject canvasMenus;
-    public GameObject panelConfirmation;
+    public GameObject panelConfirmationNewGame;
+    public GameObject panelConfirmationDeleteGame;
 
     public static GameManager Instance
     {
