@@ -1,0 +1,1005 @@
+fileFormatVersion: 2
+guid: 403df7b92854da54b876229908d6f601
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: altar 224x288 - standard_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d50a1c8746c224e9662237539dc00b
+      internalID: -1019327769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318ae687ee66cce4097ff2b5d55366cb
+      internalID: 1549673484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_2
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d554d4c7d3d85a349b2dbdf8d7bc5283
+      internalID: 246034900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_3
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfe161613594ed489ee2e3d05afa363
+      internalID: 548461721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_4
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd10a1d6dfafe204f8bca1255a3ed49f
+      internalID: 134628762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_5
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c473f98b7326e4a9c2939f36f1affb
+      internalID: -1535770198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_6
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f48386b5e4c8a4ba254e477481c151
+      internalID: 1586212214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_7
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d484a89e612968a40a142a7c3100cca0
+      internalID: -596525916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_8
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085371bd1c545f14d844142c0e8ec475
+      internalID: -1953075808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_9
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2982f89d251804d9ac577177a06973
+      internalID: -1736930662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_10
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f656b8f0d8680984d88a95f61e3b0147
+      internalID: 1839907582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_11
+      rect:
+        serializedVersion: 2
+        x: 2481
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a7fa7bd91af7248a8cc5e1f043340d
+      internalID: 411465750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_12
+      rect:
+        serializedVersion: 2
+        x: 2705
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c627c14c7214184db6d9721ecb5c3b3
+      internalID: 1291031552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_13
+      rect:
+        serializedVersion: 2
+        x: 2929
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94faaef994eb109478c7659aea771981
+      internalID: 1898674017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_14
+      rect:
+        serializedVersion: 2
+        x: 3153
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8fb3c972efe7d4c9db314fc01a4fec
+      internalID: 399564930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_15
+      rect:
+        serializedVersion: 2
+        x: 3377
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5737179f1f9f784da076c1bb77a1ee5
+      internalID: 213229126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_16
+      rect:
+        serializedVersion: 2
+        x: 3601
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d509dff7e120c945b05780ce1f8f15e
+      internalID: -426939707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_17
+      rect:
+        serializedVersion: 2
+        x: 3825
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc70cddfbae33d4a991144416dd9068
+      internalID: 1138724979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_18
+      rect:
+        serializedVersion: 2
+        x: 4049
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bb58d62e158da4dbfe6f731cf6b2bd
+      internalID: 1537629563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_19
+      rect:
+        serializedVersion: 2
+        x: 4273
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30724dfac62ea054c96468e63035240f
+      internalID: 1961763508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_20
+      rect:
+        serializedVersion: 2
+        x: 4497
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd304fd4dd8aa646be31bde84282748
+      internalID: 1823030358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_21
+      rect:
+        serializedVersion: 2
+        x: 4721
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52e47aa54548cc468f07b6580c70d2d
+      internalID: 418346369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_22
+      rect:
+        serializedVersion: 2
+        x: 4945
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cea0771f925224b83f6a7f56c12197
+      internalID: -282198381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_23
+      rect:
+        serializedVersion: 2
+        x: 5169
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56576dfc392ac5439102bb5be707ecb
+      internalID: 425083329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_24
+      rect:
+        serializedVersion: 2
+        x: 5393
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73d3f4eecf6d1741ac5f17f001cc6ed
+      internalID: 1621126124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_25
+      rect:
+        serializedVersion: 2
+        x: 5617
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc32a19013bb0243b2349c3e0a9dedc
+      internalID: -1183449294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_26
+      rect:
+        serializedVersion: 2
+        x: 5841
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc10b22fca880b4ead84438c1d12e08
+      internalID: -1391442151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_27
+      rect:
+        serializedVersion: 2
+        x: 6065
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1433e3216e25a014d973034640cdf5c6
+      internalID: -1742048882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_28
+      rect:
+        serializedVersion: 2
+        x: 6289
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f8b0ed78561254584691dfca02b42d
+      internalID: 1224224471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_29
+      rect:
+        serializedVersion: 2
+        x: 6513
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d3e5fb9ab589642906261c6ee25c64
+      internalID: 1952840068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_30
+      rect:
+        serializedVersion: 2
+        x: 6737
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51404982059bd24886e3d97d5fbec7b
+      internalID: 1478408140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_31
+      rect:
+        serializedVersion: 2
+        x: 6961
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046c68c9f1bf7fe4fac56f7273fd66cb
+      internalID: 2048255227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_32
+      rect:
+        serializedVersion: 2
+        x: 7185
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bda53a9ff234e48b04440e1c987815
+      internalID: -292341293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_33
+      rect:
+        serializedVersion: 2
+        x: 7409
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa368ba8481dca418c64b4c3604ff0c
+      internalID: 890664501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_34
+      rect:
+        serializedVersion: 2
+        x: 7633
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e98d5f688ca4ed43afa76986f35e03c
+      internalID: -2078353163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_35
+      rect:
+        serializedVersion: 2
+        x: 7857
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3105ab1485c752e4fb77b7948525fe7b
+      internalID: 314747636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_36
+      rect:
+        serializedVersion: 2
+        x: 8081
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd176bf99b4ca54693de53cadd68be6
+      internalID: 665910212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_37
+      rect:
+        serializedVersion: 2
+        x: 8305
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c47624628ed654cbe1a33994db5f71
+      internalID: 939335508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: altar 224x288 - standard_38
+      rect:
+        serializedVersion: 2
+        x: 8529
+        y: 3
+        width: 188
+        height: 247
+      alignment: 9
+      pivot: {x: 0.507, y: 0.588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a2c3b2ccd8b2b4bbf3162af04356e7
+      internalID: 1322948507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      altar 224x288 - standard_0: -1019327769
+      altar 224x288 - standard_1: 1549673484
+      altar 224x288 - standard_10: 1839907582
+      altar 224x288 - standard_11: 411465750
+      altar 224x288 - standard_12: 1291031552
+      altar 224x288 - standard_13: 1898674017
+      altar 224x288 - standard_14: 399564930
+      altar 224x288 - standard_15: 213229126
+      altar 224x288 - standard_16: -426939707
+      altar 224x288 - standard_17: 1138724979
+      altar 224x288 - standard_18: 1537629563
+      altar 224x288 - standard_19: 1961763508
+      altar 224x288 - standard_2: 246034900
+      altar 224x288 - standard_20: 1823030358
+      altar 224x288 - standard_21: 418346369
+      altar 224x288 - standard_22: -282198381
+      altar 224x288 - standard_23: 425083329
+      altar 224x288 - standard_24: 1621126124
+      altar 224x288 - standard_25: -1183449294
+      altar 224x288 - standard_26: -1391442151
+      altar 224x288 - standard_27: -1742048882
+      altar 224x288 - standard_28: 1224224471
+      altar 224x288 - standard_29: 1952840068
+      altar 224x288 - standard_3: 548461721
+      altar 224x288 - standard_30: 1478408140
+      altar 224x288 - standard_31: 2048255227
+      altar 224x288 - standard_32: -292341293
+      altar 224x288 - standard_33: 890664501
+      altar 224x288 - standard_34: -2078353163
+      altar 224x288 - standard_35: 314747636
+      altar 224x288 - standard_36: 665910212
+      altar 224x288 - standard_37: 939335508
+      altar 224x288 - standard_38: 1322948507
+      altar 224x288 - standard_4: 134628762
+      altar 224x288 - standard_5: -1535770198
+      altar 224x288 - standard_6: 1586212214
+      altar 224x288 - standard_7: -596525916
+      altar 224x288 - standard_8: -1953075808
+      altar 224x288 - standard_9: -1736930662
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

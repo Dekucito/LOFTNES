@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,14 +24,20 @@ public class GameManager : MonoBehaviour
     public ButtonUpgradeFunctions upgradeStats;
     public StatsPlayer moneyPlayer;
     public PlayerActions player_actions;
+    public ControladorDatosJuego controladorJuego;
 
-    [Header("Objects or canvas")]
-    private static GameManager _instance;
-
+    internal static GameManager _instance;
+    
+    [Header("CanvasObjects")]
     public GameObject canvasPlayer;
     public GameObject canvasMenus;
     public GameObject panelConfirmationNewGame;
     public GameObject panelConfirmationDeleteGame;
+
+    [Header("Pause")]
+    [SerializeField]
+    internal bool isPaused = false;
+    public GameObject pauseMenu;
 
     public static GameManager Instance
     {
@@ -48,7 +56,6 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-
 
     private void Awake()
     {
@@ -77,6 +84,20 @@ public class GameManager : MonoBehaviour
         upgradesRemainingText.text = "Upgrades Remaining: " + numberMaxUpgrades.ToString();
 
         upgradeStats = FindObjectOfType<ButtonUpgradeFunctions>();
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !player_actions.stayTriggerShop)
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+               ResumeGame();
+            }
+        }
+
+        Debug.Log(Time.timeScale);
     }
     public void OkButton()
     {
@@ -138,6 +159,42 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         textoUpgrade.text = "";
+    }
+    public void PauseGame()
+    {
+        player_actions.PlayerCantActions();
+
+        Time.timeScale = 0f; // Pausar el tiempo del juego
+        isPaused = true;
+        pauseMenu.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        player_actions.PlayerCanActions();
+
+        Time.timeScale = 1f; // Reanudar el tiempo del juego
+        isPaused = false;
+        pauseMenu.SetActive(false);
+    }
+    public void ExitTheGame()
+    {
+        player_actions.PlayerCantActions();
+
+        Time.timeScale = 1f; // Reanudar el tiempo del juego
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        canvasMenus.SetActive(true);
+    }
+    public void CargarDatos()
+    {
+        if (File.Exists(controladorJuego.archivoGuardado))
+        {
+            Time.timeScale = 1f; // Reanudar el tiempo del juego
+            isPaused = false;
+            pauseMenu.SetActive(false);
+
+            StartCoroutine(controladorJuego.LoadGameRutine());
+        }
     }
 }
 

@@ -122,6 +122,8 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartDialogue();
+
+            playerActions.stayTriggerShop = true;
         }
     }
 
@@ -130,6 +132,8 @@ public class Shop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canClick = false;
+
+            playerActions.stayTriggerShop = false;
         }
     }
 

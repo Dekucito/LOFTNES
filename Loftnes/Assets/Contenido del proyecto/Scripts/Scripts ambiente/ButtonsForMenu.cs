@@ -29,7 +29,6 @@ public class ButtonsForMenu : MonoBehaviour
             eliminationConfirm = false;
         }
     }
-
     public void ButtonNewGame(bool isNewGame)
     {
         if (!File.Exists(controladorJuego.archivoGuardado))
@@ -41,7 +40,6 @@ public class ButtonsForMenu : MonoBehaviour
             confirmation = true;
         }
     }
-
     public void ButtonLoadGame()
     {
         if (File.Exists(controladorJuego.archivoGuardado))
@@ -49,7 +47,6 @@ public class ButtonsForMenu : MonoBehaviour
             StartCoroutine(controladorJuego.LoadGameRutine());
         }
     }
-
     public void ButtonDeleteDatesOfGame()
     {
         if (File.Exists(controladorJuego.archivoGuardado))
@@ -57,12 +54,10 @@ public class ButtonsForMenu : MonoBehaviour
             eliminationConfirm = true;
         }
     }
-
     public void ButtonConfirm(bool IsNewGame)
     {
         controladorJuego.PrimerInicioDeJuego(IsNewGame);
     }
-
     public void ButtonBack()
     {
         gameManager.panelConfirmationNewGame.SetActive(false);
@@ -72,7 +67,6 @@ public class ButtonsForMenu : MonoBehaviour
         gameManager.panelConfirmationDeleteGame.SetActive(false);
         controladorJuego.EliminarDatos();
     }
-
     public void ButtonBackDelete()
     {
         gameManager.panelConfirmationDeleteGame.SetActive(false);

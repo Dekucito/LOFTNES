@@ -9,24 +9,12 @@ public class ControladorDatosJuego : MonoBehaviour
     public GameObject player;
     public string archivoGuardado;
     public GameManager gameManager;
-    public Vector2 initial_Position;
+    public Vector3 initial_Position;
 
     public GameObject panelLoad;
     public PlayerActions player_Actions;
 
     public DatosJuegos datosJuego = new DatosJuegos();
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CargarDatos();
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            GuardadoDatos();
-        }
-    }
 
     private void Awake()
     {
