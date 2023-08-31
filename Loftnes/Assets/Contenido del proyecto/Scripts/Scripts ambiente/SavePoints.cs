@@ -57,7 +57,7 @@ public class SavePoints : MonoBehaviour
         animation_SavePoint.SetBool("PlayerSave", false);
         controladorDatosJuego.GuardadoDatos();
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.8f);
 
         playerActions.PlayerCanActions();
     }
