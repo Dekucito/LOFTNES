@@ -8,10 +8,13 @@ public class PlayerActions : MonoBehaviour
     public PlayerMovement movementPlayer;
     public PlayerAttackController playerAttack;
 
-    public bool stayTriggerShop;
+    public bool stayInTriggers = false;
+    public GameObject savePointStay;
 
     public void PlayerCantActions()
     {
+        stayInTriggers = true;
+
         movementPlayer.playerIsWalking = false;
         movementPlayer.CanMove = false;
         playerAttack.isAttacking = true;
@@ -22,17 +25,26 @@ public class PlayerActions : MonoBehaviour
 
     public void PlayerCanActions()
     {
+        stayInTriggers = false;
+
         movementPlayer.playerIsWalking = true;
         movementPlayer.CanMove = true;
         playerAttack.isAttacking = false;
         playerAttack.canAttack = true;
     }
 
-    public void PausedFunction()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (collision.CompareTag("SavePoint"))
         {
-
+            savePointStay = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("SavePoint"))
+        {
+            savePointStay = null;
         }
     }
 }

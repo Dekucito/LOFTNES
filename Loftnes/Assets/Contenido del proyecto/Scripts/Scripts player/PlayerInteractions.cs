@@ -23,9 +23,10 @@ public class PlayerInteractions : MonoBehaviour
 
     public int maxPotionsCount;
     public int potionNumber;
-    public int posionLifeCount;
-    public int posionStrenghtCount;
-    public int posionDefenseCounts;
+
+    public int PotionLifeCount;
+    public int PotionDamageCount;
+    public int PotionDefenseCount;
 
     public bool presbuttonAndNotPosion;
 
@@ -43,45 +44,45 @@ public class PlayerInteractions : MonoBehaviour
 
     private void ButtonsComands()
     {
-        if (Input.GetKey(KeyCode.Alpha1) && coolingTimeLife == 0 && posionLifeCount > 0)
+        if (Input.GetKey(KeyCode.Alpha1) && coolingTimeLife == 0 && PotionLifeCount > 0)
         {
-            posionLifeCount --;
+            PotionLifeCount --;
 
             coolingTimeLife = 1;
             Debug.Log("pres 1" );
             StartCoroutine(PotionLifeCorrutine());
         }
-        else if (Input.GetKey(KeyCode.Alpha1) && posionLifeCount == 0 && !presbuttonAndNotPosion)
+        else if (Input.GetKey(KeyCode.Alpha1) && PotionLifeCount == 0 && !presbuttonAndNotPosion)
         {
             presbuttonAndNotPosion = true;
 
             potionNumber = 1;
             StartCoroutine(TextPotions()); ;
         }
-        if (Input.GetKey(KeyCode.Alpha2) && coolingTimeEffects == 0 && posionStrenghtCount > 0)
+        if (Input.GetKey(KeyCode.Alpha2) && coolingTimeEffects == 0 && PotionDamageCount > 0)
         {
-            posionStrenghtCount--;
+            PotionDamageCount--;
 
             coolingTimeEffects = 1;
             Debug.Log("pres 2");
             StartCoroutine(PotionDamageCorrutine());
         }
-        else if (Input.GetKey(KeyCode.Alpha2) && posionStrenghtCount == 0 && !presbuttonAndNotPosion)
+        else if (Input.GetKey(KeyCode.Alpha2) && PotionDamageCount == 0 && !presbuttonAndNotPosion)
         {
             presbuttonAndNotPosion = true;
 
             potionNumber = 2;
             StartCoroutine(TextPotions());
         }
-        if (Input.GetKey(KeyCode.Alpha3) && coolingTimeEffects == 0 && posionDefenseCounts > 0)
+        if (Input.GetKey(KeyCode.Alpha3) && coolingTimeEffects == 0 && PotionDefenseCount > 0)
         {
-            posionDefenseCounts--;
+            PotionDefenseCount--;
 
             coolingTimeEffects = 1;
             Debug.Log("pres 3");
             StartCoroutine(PotioDefendingCorrutine());
         }
-        else if (Input.GetKey(KeyCode.Alpha3) && posionDefenseCounts == 0 && !presbuttonAndNotPosion)
+        else if (Input.GetKey(KeyCode.Alpha3) && PotionDefenseCount == 0 && !presbuttonAndNotPosion)
         {
             presbuttonAndNotPosion = true;
 
@@ -192,24 +193,24 @@ public class PlayerInteractions : MonoBehaviour
 
     public void TextCountPotion()
     {
-        potionText[0].text = posionLifeCount.ToString();
-        potionText[1].text = posionStrenghtCount.ToString();
-        potionText[2].text = posionDefenseCounts.ToString();
+        potionText[0].text = PotionLifeCount.ToString();
+        potionText[1].text = PotionDamageCount.ToString();
+        potionText[2].text = PotionDefenseCount.ToString();
     }
 
     public void AddPotion()
     {
-        if (posionLifeCount < maxPotionsCount)
+        if (PotionLifeCount < maxPotionsCount)
         {
-            posionLifeCount += 1;
+            PotionLifeCount += 1;
         }
-        if (posionStrenghtCount < maxPotionsCount)
+        if (PotionDamageCount < maxPotionsCount)
         {
-            posionStrenghtCount += 1;
+            PotionDamageCount += 1;
         }
-        if (posionDefenseCounts < maxPotionsCount)
+        if (PotionDefenseCount < maxPotionsCount)
         {
-            posionDefenseCounts += 1;
+            PotionDefenseCount += 1;
         }
         else
         {

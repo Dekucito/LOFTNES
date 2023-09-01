@@ -26,13 +26,16 @@ public class Shop : MonoBehaviour
 
 
     // Private variables to track state
-    public bool writeEnd;
     public int index;
+
+    public bool writeEnd;
     public bool interactShop;
     public bool shopFunctions;
     public bool canClick;
     public bool PanelDialoguesActive;
     public bool pressEscForSalir;
+    public bool panelsActives = false;
+
 
     private void Start()
     {
@@ -91,14 +94,17 @@ public class Shop : MonoBehaviour
 
     private void ExitShop()
     {
-        PanelDialogues.SetActive(false);
-        interactText.SetActive(false);
-        panelShop.SetActive(false);
-        pociones.SetActive(true);
+        if (!panelsActives)
+        {
+            PanelDialogues.SetActive(false);
+            interactText.SetActive(false);
+            panelShop.SetActive(false);
+            pociones.SetActive(true);
 
-        PanelDialoguesActive = false;
-        interactShop = false;
-        shopFunctions = false;
+            PanelDialoguesActive = false;
+            interactShop = false;
+            shopFunctions = false;
+        }
     }
 
     private void HandleDialogueInteraction()
@@ -122,8 +128,6 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartDialogue();
-
-            playerActions.stayTriggerShop = true;
         }
     }
 
@@ -132,8 +136,6 @@ public class Shop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canClick = false;
-
-            playerActions.stayTriggerShop = false;
         }
     }
 
@@ -209,5 +211,10 @@ public class Shop : MonoBehaviour
 
             pressEscForSalir = false;
         }
+    }
+
+    public void SendBool(bool buttonBool)
+    {
+        panelsActives = buttonBool;
     }
 }

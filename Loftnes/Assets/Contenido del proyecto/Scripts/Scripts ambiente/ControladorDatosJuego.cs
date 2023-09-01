@@ -38,10 +38,17 @@ public class ControladorDatosJuego : MonoBehaviour
 
             Debug.Log("posicion del jugador: " + datosJuego.theLastPlayerPosition);
 
-            player.GetComponent<StatsPlayer>().maxHealth = datosJuego.theLastPlayerMaxLife;
             player.transform.position = datosJuego.theLastPlayerPosition;
+
+            player.GetComponent<StatsPlayer>().maxHealth = datosJuego.theLastPlayerMaxLife;
             player.GetComponent<StatsPlayer>().currentMoney = datosJuego.theLastPlayerCurrentMoney;
             player.GetComponent<StatsPlayer>().currentHealth = datosJuego.theLastPlayerCurrentLife;
+
+            player.GetComponent<PlayerInteractions>().PotionLifeCount = datosJuego.theLastCountPotionLife;
+            player.GetComponent<PlayerInteractions>().PotionDamageCount = datosJuego.theLastCountPotionDamage;
+            player.GetComponent<PlayerInteractions>().PotionDefenseCount = datosJuego.theLastCountPotionDefense;
+
+            gameManager.numberMaxUpgrades = datosJuego.theLastPlayerMaxUpgrades;
         }
         else
         {
@@ -52,10 +59,17 @@ public class ControladorDatosJuego : MonoBehaviour
     {
         DatosJuegos nuevosDatos = new DatosJuegos()
         {
-            theLastPlayerMaxLife = player.GetComponent<StatsPlayer>().maxHealth,
             theLastPlayerPosition = player.transform.position,
+
+            theLastPlayerMaxLife = player.GetComponent<StatsPlayer>().maxHealth,
             theLastPlayerCurrentLife = player.GetComponent<StatsPlayer>().currentHealth,
             theLastPlayerCurrentMoney = player.GetComponent<StatsPlayer>().currentMoney,
+
+            theLastCountPotionLife = player.GetComponent<PlayerInteractions>().PotionLifeCount,
+            theLastCountPotionDamage = player.GetComponent<PlayerInteractions>().PotionDamageCount,
+            theLastCountPotionDefense = player.GetComponent<PlayerInteractions>().PotionDefenseCount,
+
+            theLastPlayerMaxUpgrades = gameManager.numberMaxUpgrades,
         };
 
         string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
@@ -95,16 +109,26 @@ public class ControladorDatosJuego : MonoBehaviour
 
         player.transform.position = initial_Position;
 
+        player.GetComponent<PlayerInteractions>().PotionLifeCount = 1;
+        player.GetComponent<PlayerInteractions>().PotionDamageCount = 1;
+        player.GetComponent<PlayerInteractions>().PotionDefenseCount = 1;
+
+        gameManager.numberMaxUpgrades = 25;
+
         GuardadoDatos();
 
         yield return new WaitForSeconds(1f);
 
         panelLoad.SetActive(false);
         player_Actions.PlayerCanActions();
+
+        gameManager.player_actions.stayInTriggers = false;
     }
 
     public IEnumerator LoadGameRutine()
     {
+        gameManager.player_actions.stayInTriggers = true;
+
         gameManager.canvasMenus.SetActive(false);
         gameManager.panelConfirmationNewGame.SetActive(false);
 
@@ -116,9 +140,22 @@ public class ControladorDatosJuego : MonoBehaviour
         player_Actions.PlayerCantActions();
         CargarDatos();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+
+        gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.SetBool("PlayerSave", true);
+
+        yield return new WaitForSeconds(0.5f);
 
         panelLoad.SetActive(false);
+
+        AnimatorStateInfo stateInfo = gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.GetCurrentAnimatorStateInfo(0);
+        float animationDuration = stateInfo.length;
+
+        yield return new WaitForSeconds(animationDuration);
+
+        gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.SetBool("PlayerSave", false);
         player_Actions.PlayerCanActions();
+
+        gameManager.player_actions.stayInTriggers = false;
     }
 }

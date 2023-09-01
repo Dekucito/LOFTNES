@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public int upgradesDefensa;
     public int upgradesPrice;
 
-    public int numberMaxUpgrades = 20;
+    public int numberMaxUpgrades;
 
 
     public TMP_Text[] numberText;
@@ -85,19 +85,19 @@ public class GameManager : MonoBehaviour
 
         upgradeStats = FindObjectOfType<ButtonUpgradeFunctions>();
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !player_actions.stayTriggerShop)
+        if (Input.GetKeyDown(KeyCode.Escape) && !player_actions.stayInTriggers)
         {
             if (!isPaused)
             {
                 PauseGame();
+                Debug.Log("Pausa");
             }
-            else
+            else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
             {
-               ResumeGame();
+                ResumeGame();
+                Debug.Log("despausa");
             }
         }
-
-        Debug.Log(Time.timeScale);
     }
     public void OkButton()
     {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b216ba5dd388b644bd339f83c04ad3d
+guid: ac0875f3eb6899e428eb8f587ce739e9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_6
+      name: RedMoonTower_free_idle_animation._0
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 16
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9c9a471bea13f94885a15e4b743be0f
-      internalID: -1032997684
+      spriteID: 9b21d3b974e6a0c4fab8246311d0c53f
+      internalID: -41079808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_0
+      name: RedMoonTower_free_idle_animation._1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 116
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e559b530a771d4c936d0dbaf57e573
-      internalID: -460691259
+      spriteID: 33bab0aeb1f18374ba957be1e0c3749d
+      internalID: -368083131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_1
+      name: RedMoonTower_free_idle_animation._2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 216
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46e6425ed3445d14eb6fc7404523518e
-      internalID: -1066574366
+      spriteID: ddc16aff3b4743a459f7ea6666c657be
+      internalID: 1466352077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_2
+      name: RedMoonTower_free_idle_animation._3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 316
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecced60715a665f488bf9106950aa2a4
-      internalID: -1037121207
+      spriteID: 6a27f0aaadee6284aa8f74773bf017e5
+      internalID: 822039429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_3
+      name: RedMoonTower_free_idle_animation._4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 416
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d58516f48e02294d9853da769b9507a
-      internalID: 1759463569
+      spriteID: 3c14473671bbcaa41a7826876761f479
+      internalID: -904041941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_4
+      name: RedMoonTower_free_idle_animation._5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 516
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11316e84c05c015469711b93ec7c2b07
-      internalID: 1952430081
+      spriteID: 951abde9bcac0fe43a63f3a464950dd6
+      internalID: 2091677975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_5
+      name: RedMoonTower_free_idle_animation._6
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 616
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8725d40323c6fa748ae491d0f29b8308
-      internalID: 213079226
+      spriteID: 1703c90e524a2cc4aa78bfa665cb4729
+      internalID: -1347349188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden chalice 64x64-spirits_7
+      name: RedMoonTower_free_idle_animation._7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 716
+        y: 5
+        width: 68
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +290,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 869d6b7e602cbc942a88033b899d644c
-      internalID: -910346979
+      spriteID: 2566e8e8384a8ef44b404b589b01f0e5
+      internalID: -663913452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedMoonTower_free_idle_animation._8
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 5
+        width: 68
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6691c909ff134a241833a518b699916e
+      internalID: 1979167623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedMoonTower_free_idle_animation._9
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 5
+        width: 68
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb1e9149cac347449e90019f1879374
+      internalID: 1395471846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedMoonTower_free_idle_animation._10
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 5
+        width: 68
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3250e535d7682904bbbe108f4e353ede
+      internalID: -729146927
       vertices: []
       indices: 
       edges: []
@@ -307,14 +370,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      golden chalice 64x64-spirits_0: -460691259
-      golden chalice 64x64-spirits_1: -1066574366
-      golden chalice 64x64-spirits_2: -1037121207
-      golden chalice 64x64-spirits_3: 1759463569
-      golden chalice 64x64-spirits_4: 1952430081
-      golden chalice 64x64-spirits_5: 213079226
-      golden chalice 64x64-spirits_6: -1032997684
-      golden chalice 64x64-spirits_7: -910346979
+      RedMoonTower_free_idle_animation._0: -41079808
+      RedMoonTower_free_idle_animation._1: -368083131
+      RedMoonTower_free_idle_animation._10: -729146927
+      RedMoonTower_free_idle_animation._2: 1466352077
+      RedMoonTower_free_idle_animation._3: 822039429
+      RedMoonTower_free_idle_animation._4: -904041941
+      RedMoonTower_free_idle_animation._5: 2091677975
+      RedMoonTower_free_idle_animation._6: -1347349188
+      RedMoonTower_free_idle_animation._7: -663913452
+      RedMoonTower_free_idle_animation._8: 1979167623
+      RedMoonTower_free_idle_animation._9: 1395471846
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

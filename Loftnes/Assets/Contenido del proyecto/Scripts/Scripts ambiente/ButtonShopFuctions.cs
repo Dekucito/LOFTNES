@@ -24,28 +24,28 @@ public class ButtonShopFuctions : MonoBehaviour
             {
                 case ObjectsDates.Tipo.life:
 
-                    if (playerPociones.posionLifeCount < playerPociones.maxPotionsCount)
+                    if (playerPociones.PotionLifeCount < playerPociones.maxPotionsCount)
                     {
                         playerMoney.RemoveMoney(objectForShop.objectPrice);
-                        playerPociones.posionLifeCount += 1;
+                        playerPociones.PotionLifeCount += 1;
                     }
                     break;
 
                 case ObjectsDates.Tipo.damage:
 
-                    if (playerPociones.posionStrenghtCount < playerPociones.maxPotionsCount)
+                    if (playerPociones.PotionDamageCount < playerPociones.maxPotionsCount)
                     {
                         playerMoney.RemoveMoney(objectForShop.objectPrice);
-                        playerPociones.posionStrenghtCount += 1;
+                        playerPociones.PotionDamageCount += 1;
                     }
                     break;
 
                 case ObjectsDates.Tipo.defense:
 
-                    if (playerPociones.posionDefenseCounts < playerPociones.maxPotionsCount)
+                    if (playerPociones.PotionDefenseCount < playerPociones.maxPotionsCount)
                     {
                         playerMoney.RemoveMoney(objectForShop.objectPrice);
-                        playerPociones.posionDefenseCounts += 1;
+                        playerPociones.PotionDefenseCount += 1;
                     }
                     break;
             }
