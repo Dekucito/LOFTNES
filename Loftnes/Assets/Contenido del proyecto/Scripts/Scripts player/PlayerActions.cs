@@ -6,7 +6,7 @@ public class PlayerActions : MonoBehaviour
 {
     [Header("Scripts")]
     public PlayerMovement movementPlayer;
-    public PlayerAttackController playerAttack;
+    public CombateCaC playerAttack;
 
     public bool stayInTriggers = false;
     public GameObject savePointStay;
@@ -17,8 +17,7 @@ public class PlayerActions : MonoBehaviour
 
         movementPlayer.playerIsWalking = false;
         movementPlayer.CanMove = false;
-        playerAttack.isAttacking = true;
-        playerAttack.canAttack = false;
+        playerAttack.IsAtacking = true;
 
         movementPlayer.playerAnimator.SetFloat("Speed", 0f);
     }
@@ -29,8 +28,7 @@ public class PlayerActions : MonoBehaviour
 
         movementPlayer.playerIsWalking = true;
         movementPlayer.CanMove = true;
-        playerAttack.isAttacking = false;
-        playerAttack.canAttack = true;
+        playerAttack.IsAtacking = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

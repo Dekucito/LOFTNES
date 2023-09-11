@@ -115,7 +115,7 @@ public class ControladorDatosJuego : MonoBehaviour
 
         gameManager.numberMaxUpgrades = 25;
 
-        GuardadoDatos();
+        EliminarDatos();
 
         yield return new WaitForSeconds(1f);
 

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Scripts")]
     public ButtonUpgradeFunctions upgradeStats;
-    public StatsPlayer moneyPlayer;
+    public StatsPlayer statsPlayers;
     public PlayerActions player_actions;
     public ControladorDatosJuego controladorJuego;
 
@@ -91,12 +91,18 @@ public class GameManager : MonoBehaviour
             {
                 PauseGame();
                 Debug.Log("Pausa");
+
+                player_actions.stayInTriggers = false;
             }
-            else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+            else if (isPaused)
             {
                 ResumeGame();
                 Debug.Log("despausa");
             }
+        }
+        if (statsPlayers.currentHealth <= 0)
+        {
+            StartCoroutine(DeadFunctionRutine());
         }
     }
     public void OkButton()
@@ -105,7 +111,7 @@ public class GameManager : MonoBehaviour
         int totalPriceUpgrades = (upgradesPrice * upgradesVida) + (upgradesPrice * upgradesDefensa) + (upgradesPrice * upgradesDaño);
 
 
-        if (totalUpgradesToApply > 0 && totalUpgradesToApply <= numberMaxUpgrades && totalPriceUpgrades <= moneyPlayer.currentMoney)
+        if (totalUpgradesToApply > 0 && totalUpgradesToApply <= numberMaxUpgrades && totalPriceUpgrades <= statsPlayers.currentMoney)
         {
             upgradeStats.UpgradePlayerStat();
 
@@ -126,7 +132,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(TextUpgradeRuttine());
 
         }
-        else if (totalPriceUpgrades > moneyPlayer.currentMoney)
+        else if (totalPriceUpgrades > statsPlayers.currentMoney)
         {
             textoUpgrade.text = "NO TIENES SUFICIENTE DINERO";
             StartCoroutine(TextUpgradeRuttine());
@@ -195,6 +201,17 @@ public class GameManager : MonoBehaviour
 
             StartCoroutine(controladorJuego.LoadGameRutine());
         }
+    }
+    internal IEnumerator DeadFunctionRutine()
+    {
+        player_actions.movementPlayer.playerAnimator.SetBool("Dead", true);
+        player_actions.PlayerCantActions();
+
+        yield return new WaitForSeconds(2f);
+
+        player_actions.movementPlayer.playerAnimator.SetBool("Dead", false);
+
+        controladorJuego.LoadGameRutine();
     }
 }
 

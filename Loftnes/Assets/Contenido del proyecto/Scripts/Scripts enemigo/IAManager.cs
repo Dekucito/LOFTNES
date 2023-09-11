@@ -8,6 +8,8 @@ public class IAManager : MonoBehaviour
 {
     [Header("parametros")]
     public bool objectivoDectado;
+    public float maxLife;
+    public float actualLife;
 
     [Header("Follow")]
     public Transform player;
@@ -108,6 +110,14 @@ public class IAManager : MonoBehaviour
         if (armaActive)
         {
             arma.transform.parent = armaPositionForDirection[armaGameobjectPosition];
+        }
+    }
+    public void TakeDamage(float damage)
+    {
+        actualLife -= damage;
+        if (actualLife <= 0)
+        {
+            animator.SetFloat("Death", 1);
         }
     }
 }
