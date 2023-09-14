@@ -7,15 +7,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 3f;
 
     [Header("Move")]
-    private Rigidbody2D playerRb;
-    private Vector2 moveInput;
+    internal Rigidbody2D playerRb;
+    internal Vector2 moveInput;
     public Animator playerAnimator;
 
-    public bool playerIsWalking;
-    public bool CanMove;
+    internal bool playerIsWalking;
+    internal bool CanMove;
 
-    public float moveXValor;
-    public float moveYValor;
+    internal float moveXValor;
+    internal float moveYValor;
 
     void Start()
     {
@@ -55,5 +55,10 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
         playerAnimator.SetFloat("Horizontal", moveX);
         playerAnimator.SetFloat("Vertical", moveY);
+
+        if (moveX == 0 && moveY == 0)
+        {
+            playerAnimator.SetBool("Attack", false);
+        }
     }
 }

@@ -6,22 +6,27 @@ public class CombateCaC : MonoBehaviour
 {
     [SerializeField] private Transform controladorgolpe;
 
-    [SerializeField] private float radioGolpe;
-    [SerializeField] private float dañoGolpe;
-    [SerializeField] private float tiempoEntreataque;
-    [SerializeField] private float tiempoSiguienteAtaque;
+    [SerializeField] public float radioGolpe;
+    [SerializeField] internal float dañoGolpe;
+    [SerializeField] public float tiempoEntreataque;
+    [SerializeField] internal float tiempoSiguienteAtaque;
     [SerializeField] internal bool IsAtacking;
 
     internal StatsPlayer statsPlayer;
     internal PlayerActions playerActions;
+    internal SwordEfects sword;
 
-    private Animator animator;
+    internal Animator animator;
 
-    public void Start()
+    private void Awake()
     {
         statsPlayer = FindAnyObjectByType<StatsPlayer>();
         animator = GetComponent<Animator>();
         playerActions = FindAnyObjectByType<PlayerActions>();
+        sword = GetComponentInChildren<SwordEfects>();
+    }
+    public void Start()
+    {
     }
     private void Update()
     {
@@ -45,8 +50,7 @@ public class CombateCaC : MonoBehaviour
             if (colisionador.CompareTag("Enemy"))
             {
                 dañoGolpe = statsPlayer.Maxdamage;
-                Debug.Log("Hace daño " + dañoGolpe);
-                colisionador.transform.GetComponent<IAManager>().TakeDamage(dañoGolpe);
+                colisionador.transform.GetComponent<Limo>().TakeDamage(dañoGolpe, sword.Knockback);
             }
         }
     }
@@ -60,7 +64,7 @@ public class CombateCaC : MonoBehaviour
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float animationDuration = stateInfo.length;
 
-        yield return new WaitForSeconds(animationDuration); // depende de la duracion de la animacion
+        yield return new WaitForSeconds(animationDuration);
 
         animator.SetBool("Attack", false);
         playerActions.PlayerCanActions();

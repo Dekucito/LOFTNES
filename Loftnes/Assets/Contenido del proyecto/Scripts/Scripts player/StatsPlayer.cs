@@ -9,14 +9,16 @@ public class StatsPlayer : MonoBehaviour
 {
     [Header("stats")]
     public Image lifeBar;
-    public float maxHealth = 100;
-    public float currentHealth;
-    public float Maxdamage = 15;
-    public float Maxdefending = 25;
+    internal float maxHealth = 100;
+    internal float currentHealth = 1;
+    internal float Maxdamage = 15;
+    internal float Maxdefending = 25;
+
+    internal bool playerLive;
 
     [Header("money")]
-    public int startingMoney = 0; // Dinero inicial del jugador
-    public int currentMoney; // Dinero actual del jugador
+    internal int startingMoney = 0; // Dinero inicial del jugador
+    internal int currentMoney; // Dinero actual del jugador
     public TMP_Text moneyText; // Referencia al componente TextMeshPro para mostrar el dinero
 
     public GameObject moneyLogo;

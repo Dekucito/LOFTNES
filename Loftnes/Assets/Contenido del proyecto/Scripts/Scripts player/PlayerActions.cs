@@ -8,7 +8,7 @@ public class PlayerActions : MonoBehaviour
     public PlayerMovement movementPlayer;
     public CombateCaC playerAttack;
 
-    public bool stayInTriggers = false;
+    internal bool stayInTriggers = false;
     public GameObject savePointStay;
 
     public void PlayerCantActions()

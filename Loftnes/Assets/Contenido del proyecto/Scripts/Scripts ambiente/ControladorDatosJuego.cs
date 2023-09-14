@@ -20,7 +20,6 @@ public class ControladorDatosJuego : MonoBehaviour
     {
         archivoGuardado = Application.dataPath + "/datosJuego.Json";
     }
-
     public void PrimerInicioDeJuego(bool theFirstGame)
     {
         if (theFirstGame)
@@ -28,7 +27,6 @@ public class ControladorDatosJuego : MonoBehaviour
             StartCoroutine(NewGameRutine());
         }
     }
-
     public void CargarDatos()
     {
         if (File.Exists(archivoGuardado))
@@ -47,6 +45,8 @@ public class ControladorDatosJuego : MonoBehaviour
             player.GetComponent<PlayerInteractions>().PotionLifeCount = datosJuego.theLastCountPotionLife;
             player.GetComponent<PlayerInteractions>().PotionDamageCount = datosJuego.theLastCountPotionDamage;
             player.GetComponent<PlayerInteractions>().PotionDefenseCount = datosJuego.theLastCountPotionDefense;
+
+            player.GetComponent<StatsPlayer>().playerLive = true;
 
             gameManager.numberMaxUpgrades = datosJuego.theLastPlayerMaxUpgrades;
         }
@@ -78,7 +78,6 @@ public class ControladorDatosJuego : MonoBehaviour
 
         Debug.Log("archivo guardado");
     }
-
     public void EliminarDatos()
     {
         if (File.Exists(archivoGuardado))
@@ -91,7 +90,6 @@ public class ControladorDatosJuego : MonoBehaviour
             Debug.Log("No se encontraron datos del juego para eliminar");
         }
     }
-
     IEnumerator NewGameRutine()
     {
         gameManager.canvasMenus.SetActive(false);
@@ -106,6 +104,7 @@ public class ControladorDatosJuego : MonoBehaviour
         player.GetComponent<StatsPlayer>().currentMoney = 50;
         player.GetComponent<StatsPlayer>().maxHealth = 100;
         player.GetComponent<StatsPlayer>().currentHealth = player.GetComponent<StatsPlayer>().maxHealth;
+        player.GetComponent<StatsPlayer>().playerLive = true;
 
         player.transform.position = initial_Position;
 
@@ -124,7 +123,6 @@ public class ControladorDatosJuego : MonoBehaviour
 
         gameManager.player_actions.stayInTriggers = false;
     }
-
     public IEnumerator LoadGameRutine()
     {
         gameManager.player_actions.stayInTriggers = true;

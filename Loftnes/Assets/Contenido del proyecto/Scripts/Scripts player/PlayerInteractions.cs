@@ -7,9 +7,9 @@ using TMPro;
 public class PlayerInteractions : MonoBehaviour
 {
     [Header("Time Effects")]
-    public float coolingTimeLife;
-    public float coolingTimeEffects;
-    StatsPlayer player;
+    internal float coolingTimeLife;
+    internal float coolingTimeEffects;
+    internal StatsPlayer player;
 
     [Header("Tipes Effects")]
     public int healingValue;
@@ -22,13 +22,13 @@ public class PlayerInteractions : MonoBehaviour
     public GameObject textPotions;
 
     public int maxPotionsCount;
-    public int potionNumber;
+    internal int potionNumber;
 
-    public int PotionLifeCount;
-    public int PotionDamageCount;
-    public int PotionDefenseCount;
+    internal int PotionLifeCount;
+    internal int PotionDamageCount;
+    internal int PotionDefenseCount;
 
-    public bool presbuttonAndNotPosion;
+    internal bool presbuttonAndNotPosion;
 
     public void Start()
     {

@@ -27,10 +27,6 @@ public class Patrullar : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
-    void Update()
-    {
-
-    }
     public void Move() // funcion para que el enemigo se mueva entre unos puntos predeterminados creando una ronda de patrullaje
     {
         agent.SetDestination(puntosmovimiento[Siguientepaso].position);

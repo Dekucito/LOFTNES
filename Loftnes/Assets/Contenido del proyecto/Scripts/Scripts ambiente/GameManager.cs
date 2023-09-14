@@ -8,13 +8,12 @@ using System;
 public class GameManager : MonoBehaviour
 {
     [Header("panel de mejoras")]
-    public int upgradesVida;
-    public int upgradesDaño;
-    public int upgradesDefensa;
-    public int upgradesPrice;
+    internal int upgradesVida;
+    internal int upgradesDaño;
+    internal int upgradesDefensa;
+    internal int upgradesPrice;
 
     public int numberMaxUpgrades;
-
 
     public TMP_Text[] numberText;
     public TMP_Text upgradesRemainingText; // Texto para mostrar las mejoras restantes
@@ -56,7 +55,6 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-
     private void Awake()
     {
         upgradesRemainingText.text = "Upgrades Remaining: " + numberMaxUpgrades.ToString();
@@ -103,6 +101,7 @@ public class GameManager : MonoBehaviour
         if (statsPlayers.currentHealth <= 0)
         {
             StartCoroutine(DeadFunctionRutine());
+            statsPlayers.playerLive = false;
         }
     }
     public void OkButton()
