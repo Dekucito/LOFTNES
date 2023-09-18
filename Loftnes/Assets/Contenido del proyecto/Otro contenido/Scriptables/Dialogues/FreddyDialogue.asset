@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a794dcc777cb63498b817508ff20f66, type: 3}
+  m_Name: FreddyDialogue
+  m_EditorClassIdentifier: 
+  messageTexts:
+  - "\xA1Eh, forastero! comparte una bebida conmigo. No es a menudo que vemos caras
+    nuevas por aqu\xED."
+  - "Bueno, amigo, est\xE1s en el pueblo de Loftnes. No es el lugar m\xE1s grande
+    ni el m\xE1s emocionante, pero tiene su encanto. La gente aqu\xED es amigable,
+    y las historias fluyen tan libremente como la cerveza."
+  - "\xBFqu\xE9 ser\xEDa una cantina sin un buen chiste? Escucha esta: \xBFPor qu\xE9
+    los b\xE1rbaros no juegan a las cartas en la cantina? Porque siempre est\xE1n
+    dispuestos a apostarlo todo en un solo saqueo."
+  - "amigo m\xEDo, es cierto. Han habido rumores de monstruos merodeando cerca del
+    bosque oscuro que rodea Loftnes. Nadie sabe con certeza qu\xE9 son ni de d\xF3nde
+    vienen, pero los viajeros han desaparecido, y algunos granjeros han perdido su
+    ganado."
+  - "La gente aqu\xED est\xE1 preocupada, eso te lo puedo asegurar."
+  - "Algunos dicen que son bestias salvajes, otros hablan de criaturas m\xEDticas.
+    Lo \xFAnico que s\xE9 es que la Guardia del Pueblo est\xE1 investigando la situaci\xF3n,
+    pero hasta ahora, no han encontrado respuestas definitivas."
+  - "Si alguna vez necesitas m\xE1s informaci\xF3n o alguien con quien hablar, aqu\xED
+    estar\xE9. \xA1Buena suerte con tus aventuras en Loftnes!"

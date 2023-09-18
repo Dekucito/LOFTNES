@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -109,11 +133,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 137
+        y: 25
         width: 56
-        height: 50
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,11 +154,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 137
+        y: 25
         width: 56
-        height: 42
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,12 +174,12 @@ TextureImporter:
       name: fountain_v1_1_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 149
-        width: 48
-        height: 38
+        x: 68
+        y: 81
+        width: 56
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +195,12 @@ TextureImporter:
       name: fountain_v1_1_3
       rect:
         serializedVersion: 2
-        x: 200
-        y: 149
-        width: 48
-        height: 30
+        x: 4
+        y: 81
+        width: 56
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,11 +217,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 81
+        y: 137
         width: 56
-        height: 42
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,11 +238,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 81
+        y: 137
         width: 56
-        height: 48
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,153 +250,6 @@ TextureImporter:
       bones: []
       spriteID: c185fb40baed62941b761eec7c5c76ba
       internalID: 221931237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_6
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 93
-        width: 48
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 619c14d08e85dd54aa2dc85223660380
-      internalID: -1365519114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_7
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 93
-        width: 48
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aebf721e73688b6429951b665fb1872e
-      internalID: 163776914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_8
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 25
-        width: 56
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce0f180271ffe524fa6eebc00421a750
-      internalID: 586988416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_10
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 37
-        width: 48
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 482ce993fbfd7334c9ca35f36bb53b65
-      internalID: -435786175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_12
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 25
-        width: 56
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb07d7eaffaa7ae4b9bb8c9fe393a9aa
-      internalID: -1855389342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_13
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 37
-        width: 48
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00b400788f10c474c9ea93a162cb8afc
-      internalID: -476757486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fountain_v1_1_15
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 1
-        width: 56
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a993a6fe8d948044994c7ada71b7e57
-      internalID: 360799668
       vertices: []
       indices: 
       edges: []

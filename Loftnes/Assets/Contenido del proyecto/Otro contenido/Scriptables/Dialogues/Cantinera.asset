@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a794dcc777cb63498b817508ff20f66, type: 3}
+  m_Name: Cantinera
+  m_EditorClassIdentifier: 
+  messageTexts:
+  - "\xA1Bienvenido, forastero! Soy Agnes, y est\xE1s en \"La Posada del Drag\xF3n\".
+    \xBFQu\xE9 puedo ofrecerte hoy?"
+  - "Ah, antes de que me olvide, escuch\xE9 que eres nuevo por aqu\xED. \xBFHas o\xEDdo
+    hablar de los rumores sobre el castillo que ha aparecido a las afueras del pueblo?"
+  - ' Se dice que este castillo ha surgido de la nada en medio de la noche, como
+    si fuera obra de la magia oscura. Se encuentra en las afueras del pueblo, en
+    lo profundo del bosque.'
+  - La gente habla de luces misteriosas y sombras acechando sus muros. Algunos afirman
+    haber visto un monstruo de pesadilla acechando por los alrededores.
+  - Nadie lo sabe con certeza, pero los relatos son oscuros y espeluznantes. Algunos
+    dicen que es una bestia de pesadilla, otros hablan de un espectro vengativo.
+  - ' La verdad es un misterio, pero nadie ha tenido el valor de acercarse al castillo
+    para averiguarlo.'
+  - "As\xED es, forastero. Ten cuidado all\xE1 afuera y aseg\xFArate de volver a
+    visitarnos en \"La Posada del Drag\xF3n\" si necesitas refugio o una buena historia."

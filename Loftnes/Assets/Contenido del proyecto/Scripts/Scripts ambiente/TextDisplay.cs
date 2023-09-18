@@ -12,8 +12,17 @@ public class TextDisplay : MonoBehaviour
     public int currentIndex = 0;
     private Coroutine currentDisplayCoroutine;
 
+    internal bool playerMove;
+
+    PlayerActions playerActions;
+
     public GameObject panelText;
 
+
+    private void Awake()
+    {
+        playerActions = FindAnyObjectByType<PlayerActions>();
+    }
     private IEnumerator DisplayMessagesCoroutine()
     {
         while (currentIndex < messages.Count)
@@ -26,6 +35,11 @@ public class TextDisplay : MonoBehaviour
             textObject.text = "";
         }
 
+        if (!playerMove)
+        {
+            playerActions.PlayerCanActions();
+            playerMove = true;
+        }
         currentIndex = 0;
         ClearMessages();
     }

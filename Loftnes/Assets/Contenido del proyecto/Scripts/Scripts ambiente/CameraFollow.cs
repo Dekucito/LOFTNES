@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, new Vector3(posX, posY, -1), 1);
     }
 
-    void Move_Cam()
+    void Move_CamLimit()
     {
         if (encendida)
         {
@@ -56,9 +56,27 @@ public class CameraFollow : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, new Vector3(posX, posY, -1), speed * Time.deltaTime);
         }
     }
+    void FollowPlayer()
+    {
+        if (target_player != null)
+        {
+            // Obtén la posición actual de la cámara.
+            Vector3 posicionActual = transform.position;
 
+            // Calcula la posición deseada de la cámara.
+            Vector3 posicionDeseada = target_player.transform.position;
+
+            // Mantén la misma z que la cámara para mantenerla en la misma altura en una vista top-down.
+            posicionDeseada.z = posicionActual.z;
+
+            // Interpola suavemente entre la posición actual de la cámara y la posición deseada.
+            // Esto crea un efecto suave de seguimiento.
+            transform.position = Vector3.Lerp(posicionActual, posicionDeseada, speed * Time.deltaTime);
+        }
+    }
     private void Update()
     {
-        Move_Cam(); // Llamar a la función de seguimiento de la cámara en cada fotograma
+        //Move_CamLimit(); // Llamar a la función de seguimiento de la cámara en cada fotograma
+        FollowPlayer();
     }
 }

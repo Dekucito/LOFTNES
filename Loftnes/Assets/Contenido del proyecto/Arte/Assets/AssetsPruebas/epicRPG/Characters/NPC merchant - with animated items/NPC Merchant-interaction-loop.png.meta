@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,7 +127,763 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfd13bb2c8cb5340a050daa7585cf0e
+      internalID: 811030683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba35e611e75873744a39b7ec77aebf0a
+      internalID: -823915758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b853f3ef49eac50459297a724faf8943
+      internalID: -1288386250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b8da025ed44a342af584531019191c
+      internalID: -1916360108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_4
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 29
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e8e71dc2613e34a9fceb356d5b94db
+      internalID: -1096787801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_5
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 40
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324ba42f10af2a24b9fb047559ed4ed4
+      internalID: 1841228036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_6
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e6f09e25053cd418edd951235d2be0
+      internalID: 27767393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_7
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 29
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b081a856b2f4c40a610e19fc8b603f
+      internalID: -1030903524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_8
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7af19fd2b12c542ac3cc33624f44d7
+      internalID: 1137519771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_9
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd09900ff787cdf438bce0fb605e5009
+      internalID: -1361805406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2059095ec97a83e4ba5023d37c32899d
+      internalID: -854523802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_11
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2a0d7ff1b00ad4fa258427d4a84d98
+      internalID: 60387430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_12
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2fb6e5b6e60af418a7d9d990ecaac6
+      internalID: -1844692405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_13
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 29
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b957d66f77dcd984ab2f7ffb5f621684
+      internalID: -1035642113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_14
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 40
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ea85839296ad84ea9b080799120694
+      internalID: -929451782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_15
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759d2bb9dfee44a40a9ba3d62301fe12
+      internalID: 1217382548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_16
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 29
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44afe0b434c07354789173c7deee467f
+      internalID: -817958991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_17
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1282d4f4ebfbd64a9a886a9580d3240
+      internalID: -355952476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_18
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639c2658cc6209c40ade38e7e83297b4
+      internalID: 1988309228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_19
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afb43b672de104408e0a1a8de4fb918
+      internalID: -1607768457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_20
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f832ae373ceee42bfe8a7f57ca6c1c
+      internalID: -754599325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_21
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d1fac6c07720b46824d9b25b925396
+      internalID: 402314527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_22
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 29
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ade19e5789f374c94a3fbd3527c2f8
+      internalID: 846247955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_23
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 40
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63db8e9f642a85f4bbea79c8317ea1a0
+      internalID: -1683207852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_24
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38314cfa78ca7a24ca1162dfd07e282c
+      internalID: -1955394799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_25
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 29
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f367a33a8c9004e89bc4cb885877ed
+      internalID: 1961456300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_26
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23213f48d2a11b24a90fd3f12aa1d122
+      internalID: -657977393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_27
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fd7f088dd18fc4fa87168832434460
+      internalID: -700208053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_28
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec92c8ae12688fd4ba70cf346b250ed9
+      internalID: 1629453558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_29
+      rect:
+        serializedVersion: 2
+        x: 2894
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071751f3422be6e48b4516d76dd8c21d
+      internalID: -342302758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_30
+      rect:
+        serializedVersion: 2
+        x: 3004
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf7a432d2cb743418fa12c2e9dbdc7d
+      internalID: 1467807231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_31
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 29
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e98b4325822f7f479a54fca077cafd7
+      internalID: 1085134615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_32
+      rect:
+        serializedVersion: 2
+        x: 3219
+        y: 40
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c7afe34b026774fa77b550d5a86eb6
+      internalID: 1664864338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_33
+      rect:
+        serializedVersion: 2
+        x: 3224
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2144fa9b7e4bb5c44a79c185e6292a31
+      internalID: 1400609991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_34
+      rect:
+        serializedVersion: 2
+        x: 3329
+        y: 29
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3789f0775f322945bf344283978fc6d
+      internalID: -1659864642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Merchant-interaction-loop_35
+      rect:
+        serializedVersion: 2
+        x: 3444
+        y: 29
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc5450c0662c5d459b7a0cf55ffdc59
+      internalID: 637190254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +894,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NPC Merchant-interaction-loop_0: 811030683
+      NPC Merchant-interaction-loop_1: -823915758
+      NPC Merchant-interaction-loop_10: -854523802
+      NPC Merchant-interaction-loop_11: 60387430
+      NPC Merchant-interaction-loop_12: -1844692405
+      NPC Merchant-interaction-loop_13: -1035642113
+      NPC Merchant-interaction-loop_14: -929451782
+      NPC Merchant-interaction-loop_15: 1217382548
+      NPC Merchant-interaction-loop_16: -817958991
+      NPC Merchant-interaction-loop_17: -355952476
+      NPC Merchant-interaction-loop_18: 1988309228
+      NPC Merchant-interaction-loop_19: -1607768457
+      NPC Merchant-interaction-loop_2: -1288386250
+      NPC Merchant-interaction-loop_20: -754599325
+      NPC Merchant-interaction-loop_21: 402314527
+      NPC Merchant-interaction-loop_22: 846247955
+      NPC Merchant-interaction-loop_23: -1683207852
+      NPC Merchant-interaction-loop_24: -1955394799
+      NPC Merchant-interaction-loop_25: 1961456300
+      NPC Merchant-interaction-loop_26: -657977393
+      NPC Merchant-interaction-loop_27: -700208053
+      NPC Merchant-interaction-loop_28: 1629453558
+      NPC Merchant-interaction-loop_29: -342302758
+      NPC Merchant-interaction-loop_3: -1916360108
+      NPC Merchant-interaction-loop_30: 1467807231
+      NPC Merchant-interaction-loop_31: 1085134615
+      NPC Merchant-interaction-loop_32: 1664864338
+      NPC Merchant-interaction-loop_33: 1400609991
+      NPC Merchant-interaction-loop_34: -1659864642
+      NPC Merchant-interaction-loop_35: 637190254
+      NPC Merchant-interaction-loop_4: -1096787801
+      NPC Merchant-interaction-loop_5: 1841228036
+      NPC Merchant-interaction-loop_6: 27767393
+      NPC Merchant-interaction-loop_7: -1030903524
+      NPC Merchant-interaction-loop_8: 1137519771
+      NPC Merchant-interaction-loop_9: -1361805406
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
