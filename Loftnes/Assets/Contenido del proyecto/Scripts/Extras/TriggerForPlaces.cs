@@ -14,14 +14,11 @@ public class TriggerForPlaces : MonoBehaviour
 
     [Header("Scripts")]
     internal PlayerActions playerActions;
-    internal CameraFollow cameraPlayer;
 
     private void Awake()
     {
         playerActions = FindAnyObjectByType<PlayerActions>();
         player = GameObject.FindGameObjectWithTag("Player");
-
-        cameraPlayer = FindAnyObjectByType<CameraFollow>();
     }
     private void Start()
     {

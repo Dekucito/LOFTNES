@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scenas principales/Menus.unity
-    guid: 1b9b0c8f000387b439b81140649781af
-  - enabled: 1
-    path: Assets/Scenes/Escenas de integrantes/Escenas Andres/Scene Andres.unity
-    guid: 30a794c288e34084db9482761e7c6ec0
+    path: Assets/Scenes/Scenas principales/Juego.unity
+    guid: bec0f6d625588b1449f0efc456a13cb6
   m_configObjects: {}

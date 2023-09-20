@@ -125,35 +125,42 @@ public class ControladorDatosJuego : MonoBehaviour
     }
     public IEnumerator LoadGameRutine()
     {
-        gameManager.player_actions.stayInTriggers = true;
+        if (File.Exists(archivoGuardado))
+        {
+            gameManager.player_actions.stayInTriggers = true;
 
-        gameManager.canvasMenus.SetActive(false);
-        gameManager.panelConfirmationNewGame.SetActive(false);
+            gameManager.canvasMenus.SetActive(false);
+            gameManager.panelConfirmationNewGame.SetActive(false);
 
-        gameManager.canvasPlayer.SetActive(true);
-        panelLoad.SetActive(true);
+            gameManager.canvasPlayer.SetActive(true);
+            panelLoad.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2f);
 
-        player_Actions.PlayerCantActions();
-        CargarDatos();
+            player_Actions.PlayerCantActions();
+            CargarDatos();
 
-        yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f);
 
-        gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.SetBool("PlayerSave", true);
+            gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.SetBool("PlayerSave", true);
 
-        yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f);
 
-        panelLoad.SetActive(false);
+            panelLoad.SetActive(false);
 
-        AnimatorStateInfo stateInfo = gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.GetCurrentAnimatorStateInfo(0);
-        float animationDuration = stateInfo.length;
+            AnimatorStateInfo stateInfo = gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.GetCurrentAnimatorStateInfo(0);
+            float animationDuration = stateInfo.length;
 
-        yield return new WaitForSeconds(animationDuration);
+            yield return new WaitForSeconds(animationDuration);
 
-        gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.SetBool("PlayerSave", false);
-        player_Actions.PlayerCanActions();
+            gameManager.player_actions.savePointStay.GetComponent<SavePoints>().animation_SavePoint.SetBool("PlayerSave", false);
+            player_Actions.PlayerCanActions();
 
-        gameManager.player_actions.stayInTriggers = false;
+            gameManager.player_actions.stayInTriggers = false;
+        }
+        else
+        {
+            StartCoroutine(NewGameRutine());
+        }
     }
 }

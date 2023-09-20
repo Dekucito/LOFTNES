@@ -20,6 +20,7 @@ public class Shop : MonoBehaviour
     public GameObject pociones;
     public GameObject interactText;
     public GameObject panelShop;
+    public GameObject textInteract;
 
     [Header("Player")]
     public PlayerActions playerActions;
@@ -127,7 +128,7 @@ public class Shop : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartDialogue();
+            textInteract.SetActive(true);
         }
     }
 
@@ -138,7 +139,17 @@ public class Shop : MonoBehaviour
             canClick = false;
         }
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                textInteract.SetActive(true);
+                StartDialogue();
+            }
+        }
+    }
     private void StartDialogue()
     {
         canClick = true;

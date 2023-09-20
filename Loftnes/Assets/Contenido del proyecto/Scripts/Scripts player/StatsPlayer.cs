@@ -22,9 +22,12 @@ public class StatsPlayer : MonoBehaviour
     public TMP_Text moneyText; // Referencia al componente TextMeshPro para mostrar el dinero
 
     public GameObject moneyLogo;
+    GameManager gameManager;
 
     public void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
+
         moneyLogo.SetActive(true);
         UpdateMoneyText();
     }
@@ -41,6 +44,12 @@ public class StatsPlayer : MonoBehaviour
     {
         Debug.Log(damage);
         currentHealth = currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(gameManager.DeadFunctionRutine());
+            Debug.Log("muere");
+        }
     }
     public void AddMoney(int amount)
     {

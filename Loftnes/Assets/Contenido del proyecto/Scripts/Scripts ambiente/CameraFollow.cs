@@ -12,11 +12,11 @@ public class CameraFollow : MonoBehaviour
     private float posX;
     private float posY;
 
-    public float derechaMax;
-    public float izquierdaMAx;
+    private float derechaMax;
+    private float izquierdaMAx;
 
-    public float alturaMax;
-    public float alturaMin;
+    private float alturaMax;
+    private float alturaMin;
 
     public float speed;
     public bool encendida = true;

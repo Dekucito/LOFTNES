@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         upgradeStats = FindObjectOfType<ButtonUpgradeFunctions>();
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !player_actions.stayInTriggers)
+        if (Input.GetKeyDown(KeyCode.P) && !player_actions.stayInTriggers)
         {
             if (!isPaused)
             {
@@ -98,11 +98,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log("despausa");
             }
         }
-        if (statsPlayers.currentHealth <= 0)
-        {
-            StartCoroutine(DeadFunctionRutine());
-            statsPlayers.playerLive = false;
-        }
     }
     public void OkButton()
     {
@@ -116,7 +111,7 @@ public class GameManager : MonoBehaviour
 
             numberMaxUpgrades -= totalUpgradesToApply;
 
-            upgradesRemainingText.text = "Upgrades Remaining: " + numberMaxUpgrades.ToString();
+            upgradesRemainingText.text = "Mejoras restantes " + numberMaxUpgrades.ToString();
 
             for (int i = 0; i < numberText.Length; i++)
             {
@@ -184,6 +179,8 @@ public class GameManager : MonoBehaviour
     public void ExitTheGame()
     {
         player_actions.PlayerCantActions();
+        player_actions.transform.position = new Vector3(1000, 1000, 0);
+
 
         Time.timeScale = 1f; // Reanudar el tiempo del juego
         isPaused = false;
@@ -203,6 +200,8 @@ public class GameManager : MonoBehaviour
     }
     internal IEnumerator DeadFunctionRutine()
     {
+        Debug.Log("corrutina de morir");
+
         player_actions.movementPlayer.playerAnimator.SetBool("Dead", true);
         player_actions.PlayerCantActions();
 
@@ -210,7 +209,9 @@ public class GameManager : MonoBehaviour
 
         player_actions.movementPlayer.playerAnimator.SetBool("Dead", false);
 
-        controladorJuego.LoadGameRutine();
+        StartCoroutine(controladorJuego.LoadGameRutine());
+
+        Debug.Log("Fin de la corrutina");
     }
 }
 
