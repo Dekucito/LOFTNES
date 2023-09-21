@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     internal int upgradesVida;
     internal int upgradesDaño;
     internal int upgradesDefensa;
-    internal int upgradesPrice;
+    public int upgradesPrice;
 
     public int numberMaxUpgrades;
 

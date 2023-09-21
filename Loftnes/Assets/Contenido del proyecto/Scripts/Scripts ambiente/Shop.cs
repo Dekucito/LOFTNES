@@ -137,6 +137,7 @@ public class Shop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canClick = false;
+            textInteract.SetActive(false);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -145,7 +146,7 @@ public class Shop : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                textInteract.SetActive(true);
+                textInteract.SetActive(false);
                 StartDialogue();
             }
         }
